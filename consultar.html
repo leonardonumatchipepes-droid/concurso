@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Consulta de candidatura - Concurso Público de Ingresso Externo 2026 - Sector da Educação - Município de Menongue">
+
+    <meta name="author"
+          content="Administração Municipal de Menongue - Direcção Municipal da Educação">
+
+    <title>Consultar Candidatura | Concurso Público 2026 | Educação Menongue</title>
+
+    <!-- CSS PRINCIPAL -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        /* =====================================================
+           ESTILOS ESPECÍFICOS DA PÁGINA DE CONSULTA
+           ===================================================== */
+
+        .institutional-header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .institutional-header-inner {
+            max-width: 1200px;
+            width: 90%;
+            margin: auto;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 15px 0;
+        }
+
+        .institutional-logo {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+        }
+
+        .institutional-info h1 {
+            font-size: 18px;
+            color: #003d78;
+            margin-bottom: 3px;
+            font-weight: 700;
+        }
+
+        .institutional-info h2 {
+            font-size: 15px;
+            color: #0056a6;
+            margin-bottom: 3px;
+            font-weight: 600;
+        }
+
+        .institutional-info p {
+            font-size: 12px;
+            color: #6b7280;
+        }
+
+        /* HERO */
+
+        .consultar-hero {
+            background:
+                linear-gradient(
+                    rgba(0, 61, 120, 0.95),
+                    rgba(0, 86, 166, 0.95)
+                );
+
+            color: #ffffff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .consultar-hero i {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .consultar-hero h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .consultar-hero p {
+            max-width: 750px;
+            margin: auto;
+            font-size: 15px;
+            opacity: 0.95;
+        }
+
+        /* CONTAINER */
+
+        .consulta-page {
+            min-height: 600px;
+            padding: 50px 20px;
+        }
+
+        .consulta-wrapper {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        /* CARD PRINCIPAL */
+
+        .consulta-card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .consulta-card-header {
+            padding: 25px 30px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .consulta-card-header h2 {
+            color: #003d78;
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        .consulta-card-header p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .consulta-card-body {
+            padding: 30px;
+        }
+
+        /* ABAS */
+
+        .consulta-tabs {
+            display: flex;
+            border-bottom: 1px solid #e5e7eb;
+            margin-bottom: 25px;
+        }
+
+        .consulta-tab {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            background: transparent;
+            color: #6b7280;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .consulta-tab:hover {
+            color: #0056a6;
+        }
+
+        .consulta-tab.active {
+            color: #0056a6;
+            border-bottom-color: #0056a6;
+        }
+
+        /* FORMULÁRIO */
+
+        .consulta-form {
+            display: none;
+        }
+
+        .consulta-form.active {
+            display: block;
+        }
+
+        .input-with-icon {
+            position: relative;
+        }
+
+        .input-with-icon i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6b7280;
+        }
+
+        .input-with-icon input {
+            padding-left: 45px;
+        }
+
+        .consulta-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        /* RESULTADO */
+
+        #resultadoConsulta {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .resultado-header {
+            background: #003d78;
+            color: #ffffff;
+            padding: 25px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .resultado-header h3 {
+            margin-bottom: 5px;
+        }
+
+        .resultado-header p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .resultado-body {
+            border: 1px solid #e5e7eb;
+            border-top: none;
+            padding: 25px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        /* STATUS */
+
+        .resultado-status {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f8fafc;
+            padding: 18px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .status-label {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .status-value {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .status-pendente {
+            color: #856404;
+        }
+
+        .status-admitido {
+            color: #146c43;
+        }
+
+        .status-excluido {
+            color: #b02a37;
+        }
+
+        .status-aprovado {
+            color: #084298;
+        }
+
+        /* DADOS */
+
+        .dados-candidato {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .dado-item {
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            padding: 15px;
+            border-radius: 7px;
+        }
+
+        .dado-item small {
+            display: block;
+            color: #6b7280;
+            font-size: 11px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .dado-item strong {
+            color: #172033;
+            font-size: 14px;
+        }
+
+        /* DOCUMENTOS */
+
+        .documentos-status {
+            margin-top: 25px;
+        }
+
+        .documentos-status h4 {
+            color: #003d78;
+            margin-bottom: 15px;
+        }
+
+        .documento-linha {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 14px;
+        }
+
+        .documento-ok {
+            color: #198754;
+            font-weight: 600;
+        }
+
+        .documento-pendente {
+            color: #dc3545;
+            font-weight: 600;
+        }
+
+        /* RESULTADO TESTE */
+
+        .teste-box {
+            margin-top: 25px;
+            background: #eaf3fb;
+            border: 1px solid #bdd7ef;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .teste-box h4 {
+            color: #003d78;
+            margin-bottom: 10px;
+        }
+
+        .nota {
+            font-size: 32px;
+            color: #0056a6;
+            font-weight: 700;
+        }
+
+        /* COLOCAÇÃO */
+
+        .colocacao-box {
+            margin-top: 25px;
+            background: #e9f7ef;
+            border: 1px solid #b7dfc6;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .colocacao-box h4 {
+            color: #146c43;
+            margin-bottom: 10px;
+        }
+
+        /* BOTÕES RESULTADO */
+
+        .resultado-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        /* LOADING */
+
+        .consulta-loading {
+            display: none;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .consulta-loading .spinner {
+            margin: auto;
+        }
+
+        /* MENSAGEM */
+
+        .consulta-message {
+            display: none;
+            padding: 15px;
+            border-radius: 7px;
+            margin-top: 20px;
+        }
+
+        .consulta-message.error {
+            display: block;
+            background: #fcebea;
+            color: #b02a37;
+            border-left: 4px solid #dc3545;
+        }
+
+        .consulta-message.info {
+            display: block;
+            background: #e7f7fb;
+            color: #087990;
+            border-left: 4px solid #0dcaf0;
+        }
+
+        /* AVISO */
+
+        .consulta-aviso {
+            margin-top: 25px;
+            padding: 18px;
+            background: #fff8e1;
+            border-left: 4px solid #f59e0b;
+            color: #856404;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+
+        /* FOOTER */
+
+        .footer-institucional {
+            background: #172033;
+            color: #ffffff;
+            padding: 40px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            width: 90%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-content h3 {
+            margin-bottom: 15px;
+        }
+
+        .footer-content p,
+        .footer-content li {
+            color: #cbd5e1;
+            font-size: 13px;
+        }
+
+        .footer-content ul {
+            list-style: none;
+        }
+
+        .footer-content li {
+            margin-bottom: 8px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            width: 90%;
+            margin: 30px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: #9ca3af;
+            font-size: 12px;
+        }
+
+        /* IMPRESSÃO */
+
+        @media print {
+
+            body {
+                background: #ffffff;
+            }
+
+            .top-bar,
+            .navbar,
+            .consulta-hero,
+            .consulta-card-header,
+            .consulta-tabs,
+            .consulta-form,
+            .consulta-aviso,
+            .resultado-actions,
+            .footer-institucional {
+                display: none !important;
+            }
+
+            .consulta-page {
+                padding: 0;
+            }
+
+            .consulta-card {
+                box-shadow: none;
+            }
+
+            #resultadoConsulta {
+                display: block !important;
+            }
+        }
+
+        /* RESPONSIVO */
+
+        @media (max-width: 768px) {
+
+            .institutional-header-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .consulta-hero h1 {
+                font-size: 25px;
+            }
+
+            .consulta-card-body {
+                padding: 20px;
+            }
+
+            .dados-candidato {
+                grid-template-columns: 1fr;
+            }
+
+            .resultado-status {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .consulta-actions {
+                flex-direction: column;
+            }
+
+            .consulta-actions .btn {
+                width: 100%;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     BARRA SUPERIOR
+     ========================================================= -->
+
+<div class="top-bar">
+
+    <div class="top-bar-content">
+
+        <span>
+            República de Angola
+        </span>
+
+        <span>
+            Concurso Público de Ingresso Externo 2026
+        </span>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     CABEÇALHO INSTITUCIONAL
+     ========================================================= -->
+
+<header class="institutional-header">
+
+    <div class="institutional-header-inner">
+
+        <!-- SUBSTITUIR PELO LOGÓTIPO OFICIAL -->
+        <img
+            src="assets/logo-menongue.png"
+            alt="Logótipo da Administração Municipal de Menongue"
+            class="institutional-logo"
+        >
+
+        <div class="institutional-info">
+
+            <h1>
+                REPÚBLICA DE ANGOLA
+            </h1>
+
+            <h2>
+                GOVERNO PROVINCIAL DO CUBANGO
+            </h2>
+
+            <h2>
+                ADMINISTRAÇÃO MUNICIPAL DE MENONGUE
+            </h2>
+
+            <p>
+                Direcção Municipal da Educação
+            </p>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     MENU PRINCIPAL
+     ========================================================= -->
+
+<header class="header">
+
+    <div class="header-container">
+
+        <div class="logo-area">
+
+            <div class="logo-text">
+
+                <h1>
+                    Portal do Concurso da Educação
+                </h1>
+
+                <p>
+                    Concurso Público de Ingresso Externo 2026
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Abrir menu">
+
+            <i class="fas fa-bars"></i>
+
+        </button>
+
+
+        <nav class="navbar" id="navbar">
+
+            <a href="index.html">
+                <i class="fas fa-home"></i>
+                Início
+            </a>
+
+            <a href="inscricao-professores.html">
+                <i class="fas fa-chalkboard-teacher"></i>
+                Professores
+            </a>
+
+            <a href="inscricao-regime-geral.html">
+                <i class="fas fa-users"></i>
+                Regime Geral
+            </a>
+
+            <a href="consultar.html" class="active">
+                <i class="fas fa-search"></i>
+                Consultar
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
+<section class="consultar-hero">
+
+    <i class="fas fa-file-circle-check"></i>
+
+    <h1>
+        Consulta de Candidatura
+    </h1>
+
+    <p>
+        Consulte o estado da sua candidatura ao Concurso Público
+        de Ingresso Externo 2026 do Sector da Educação no Município
+        de Menongue.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     ÁREA PRINCIPAL
+     ========================================================= -->
+
+<main class="consulta-page">
+
+    <div class="consulta-wrapper">
+
+        <div class="consulta-card">
+
+            <div class="consulta-card-header">
+
+                <h2>
+                    Consultar candidatura
+                </h2>
+
+                <p>
+                    Introduza o seu número de inscrição ou o número
+                    do Bilhete de Identidade para consultar os dados.
+                </p>
+
+            </div>
+
+
+            <div class="consulta-card-body">
+
+
+                <!-- ABAS -->
+
+                <div class="consulta-tabs">
+
+                    <button
+                        class="consulta-tab active"
+                        onclick="abrirConsulta('inscricao')">
+
+                        <i class="fas fa-hashtag"></i>
+
+                        Nº de Inscrição
+
+                    </button>
+
+
+                    <button
+                        class="consulta-tab"
+                        onclick="abrirConsulta('bi')">
+
+                        <i class="fas fa-id-card"></i>
+
+                        Bilhete de Identidade
+
+                    </button>
+
+                </div>
+
+
+                <!-- CONSULTA POR INSCRIÇÃO -->
+
+                <form
+                    id="formInscricao"
+                    class="consulta-form active">
+
+                    <div class="form-group">
+
+                        <label for="numeroInscricao">
+
+                            Número de Inscrição
+                            <span class="required">*</span>
+
+                        </label>
+
+                        <div class="input-with-icon">
+
+                            <i class="fas fa-hashtag"></i>
+
+                            <input
+                                type="text"
+                                id="numeroInscricao"
+                                class="form-control"
+                                placeholder="Ex.: MEN-EDU-000001/2026"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="consulta-actions">
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary">
+
+                            <i class="fas fa-search"></i>
+
+                            Consultar Candidatura
+
+                        </button>
+
+                        <button
+                            type="reset"
+                            class="btn btn-outline">
+
+                            <i class="fas fa-eraser"></i>
+
+                            Limpar
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+
+                <!-- CONSULTA POR BI -->
+
+                <form
+                    id="formBI"
+                    class="consulta-form">
+
+                    <div class="form-group">
+
+                        <label for="numeroBI">
+
+                            Número do Bilhete de Identidade
+                            <span class="required">*</span>
+
+                        </label>
+
+                        <div class="input-with-icon">
+
+                            <i class="fas fa-id-card"></i>
+
+                            <input
+                                type="text"
+                                id="numeroBI"
+                                class="form-control"
+                                placeholder="Introduza o número do seu BI"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="consulta-actions">
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary">
+
+                            <i class="fas fa-search"></i>
+
+                            Consultar Candidatura
+
+                        </button>
+
+                        <button
+                            type="reset"
+                            class="btn btn-outline">
+
+                            <i class="fas fa-eraser"></i>
+
+                            Limpar
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+
+                <!-- LOADING -->
+
+                <div
+                    id="loadingConsulta"
+                    class="consulta-loading">
+
+                    <div class="spinner"></div>
+
+                    <p>
+                        A consultar os dados da candidatura...
+                    </p>
+
+                </div>
+
+
+                <!-- MENSAGEM -->
+
+                <div
+                    id="consultaMessage"
+                    class="consulta-message">
+                </div>
+
+
+                <!-- =================================================
+                     RESULTADO DA CONSULTA
+                     ================================================= -->
+
+                <section
+                    id="resultadoConsulta">
+
+                    <div class="resultado-header">
+
+                        <h3>
+                            <i class="fas fa-file-circle-check"></i>
+
+                            Resultado da Consulta
+                        </h3>
+
+                        <p>
+                            Dados oficiais da candidatura registada
+                            no Concurso Público de Ingresso Externo 2026.
+                        </p>
+
+                    </div>
+
+
+                    <div class="resultado-body">
+
+
+                        <!-- STATUS -->
+
+                        <div class="resultado-status">
+
+                            <div>
+
+                                <div class="status-label">
+                                    Estado da candidatura
+                                </div>
+
+                                <div
+                                    id="resultadoStatus"
+                                    class="status-value status-pendente">
+
+                                    Pendente
+
+                                </div>
+
+                            </div>
+
+                            <div>
+
+                                <div class="status-label">
+                                    Nº de inscrição
+                                </div>
+
+                                <strong id="resultadoNumero">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- DADOS DO CANDIDATO -->
+
+                        <h4>
+                            <i class="fas fa-user"></i>
+                            Dados do candidato
+                        </h4>
+
+                        <div class="dados-candidato">
+
+                            <div class="dado-item">
+
+                                <small>
+                                    Nome completo
+                                </small>
+
+                                <strong id="resultadoNome">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="dado-item">
+
+                                <small>
+                                    Bilhete de Identidade
+                                </small>
+
+                                <strong id="resultadoBI">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="dado-item">
+
+                                <small>
+                                    Categoria
+                                </small>
+
+                                <strong id="resultadoCategoria">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="dado-item">
+
+                                <small>
+                                    Regime
+                                </small>
+
+                                <strong id="resultadoRegime">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="dado-item">
+
+                                <small>
+                                    Habilitações Literárias
+                                </small>
+
+                                <strong id="resultadoHabilitacoes">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="dado-item">
+
+                                <small>
+                                    Especialidade
+                                </small>
+
+                                <strong id="resultadoEspecialidade">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="dado-item">
+
+                                <small>
+                                    Município
+                                </small>
+
+                                <strong id="resultadoMunicipio">
+                                    Menongue
+                                </strong>
+
+                            </div>
+
+
+                            <div class="dado-item">
+
+                                <small>
+                                    Data de inscrição
+                                </small>
+
+                                <strong id="resultadoData">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- DOCUMENTAÇÃO -->
+
+                        <div class="documentos-status">
+
+                            <h4>
+                                <i class="fas fa-folder-open"></i>
+                                Situação documental
+                            </h4>
+
+
+                            <div class="documento-linha">
+
+                                <span>
+                                    Requerimento
+                                </span>
+
+                                <strong
+                                    id="docRequerimento"
+                                    class="documento-ok">
+
+                                    <i class="fas fa-check-circle"></i>
+                                    Entregue
+
+                                </strong>
+
+                            </div>
+
+
+                            <div class="documento-linha">
+
+                                <span>
+                                    Bilhete de Identidade
+                                </span>
+
+                                <strong
+                                    id="docBI"
+                                    class="documento-ok">
+
+                                    <i class="fas fa-check-circle"></i>
+                                    Entregue
+
+                                </strong>
+
+                            </div>
+
+
+                            <div class="documento-linha">
+
+                                <span>
+                                    Certificado de Habilitações Literárias
+                                </span>
+
+                                <strong
+                                    id="docCertificado"
+                                    class="documento-ok">
+
+                                    <i class="fas fa-check-circle"></i>
+                                    Entregue
+
+                                </strong>
+
+                            </div>
+
+
+                            <div class="documento-linha">
+
+                                <span>
+                                    Reconhecimento INAAREES
+                                </span>
+
+                                <strong
+                                    id="docINAAREES"
+                                    class="documento-pendente">
+
+                                    Não aplicável
+
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- RESULTADO DO TESTE -->
+
+                        <div
+                            id="resultadoTeste"
+                            class="teste-box">
+
+                            <h4>
+                                <i class="fas fa-file-pen"></i>
+                                Resultado da avaliação
+                            </h4>
+
+                            <p>
+                                Situação:
+                                <strong id="situacaoTeste">
+                                    A aguardar realização do teste
+                                </strong>
+                            </p>
+
+                            <p>
+                                Classificação:
+                                <span
+                                    id="notaTeste"
+                                    class="nota">
+
+                                    —
+
+                                </span>
+                            </p>
+
+                        </div>
+
+
+                        <!-- COLOCAÇÃO -->
+
+                        <div
+                            id="resultadoColocacao"
+                            class="colocacao-box"
+                            style="display:none;">
+
+                            <h4>
+                                <i class="fas fa-school"></i>
+                                Informação de colocação
+                            </h4>
+
+                            <p>
+                                <strong>
+                                    Instituição:
+                                </strong>
+
+                                <span id="instituicaoColocacao">
+                                    —
+                                </span>
+                            </p>
+
+                            <p>
+                                <strong>
+                                    Localidade:
+                                </strong>
+
+                                <span id="localidadeColocacao">
+                                    —
+                                </span>
+                            </p>
+
+                        </div>
+
+
+                        <!-- BOTÕES -->
+
+                        <div class="resultado-actions">
+
+                            <button
+                                class="btn btn-primary"
+                                onclick="window.print()">
+
+                                <i class="fas fa-print"></i>
+
+                                Imprimir Comprovativo
+
+                            </button>
+
+
+                            <button
+                                class="btn btn-outline"
+                                onclick="novaConsulta()">
+
+                                <i class="fas fa-arrow-left"></i>
+
+                                Nova Consulta
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- AVISO -->
+
+                <div class="consulta-aviso">
+
+                    <strong>
+                        <i class="fas fa-circle-info"></i>
+                        Informação importante:
+                    </strong>
+
+                    A consulta apresenta apenas informações disponíveis
+                    no sistema. Os resultados oficiais serão divulgados
+                    pelas entidades competentes nos termos dos
+                    Termos de Referência do Concurso Público de Ingresso
+                    Externo 2026.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer class="footer-institucional">
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>
+                Concurso Público de Ingresso Externo 2026
+            </h3>
+
+            <p>
+                Portal de apoio à recepção e consulta das candidaturas
+                do Concurso Público de Ingresso Externo do Sector da
+                Educação no Município de Menongue.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Acesso rápido
+            </h3>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        Página Inicial
+                    </a>
+                </li>
+
+                <li>
+                    <a href="inscricao-professores.html">
+                        Inscrição de Professores
+                    </a>
+                </li>
+
+                <li>
+                    <a href="inscricao-regime-geral.html">
+                        Regime Geral
+                    </a>
+                </li>
+
+                <li>
+                    <a href="consultar.html">
+                        Consultar Candidatura
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Contactos
+            </h3>
+
+            <p>
+                Direcção Municipal da Educação
+            </p>
+
+            <p>
+                Município de Menongue
+            </p>
+
+            <p>
+                Província do Cubango
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Administração Municipal de Menongue.
+        Direcção Municipal da Educação.
+        Todos os direitos reservados.
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script>
+
+    /* =====================================================
+       MENU MOBILE
+       ===================================================== */
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navbar = document.getElementById("navbar");
+
+    if (menuToggle) {
+
+        menuToggle.addEventListener("click", function () {
+
+            navbar.classList.toggle("show");
+
+        });
+
+    }
+
+
+    /* =====================================================
+       TROCA DE ABAS
+       ===================================================== */
+
+    function abrirConsulta(tipo) {
+
+        const tabs =
+            document.querySelectorAll(".consulta-tab");
+
+        const forms =
+            document.querySelectorAll(".consulta-form");
+
+        tabs.forEach(tab => {
+
+            tab.classList.remove("active");
+
+        });
+
+        forms.forEach(form => {
+
+            form.classList.remove("active");
+
+        });
+
+
+        if (tipo === "inscricao") {
+
+            tabs[0].classList.add("active");
+
+            document
+                .getElementById("formInscricao")
+                .classList.add("active");
+
+        }
+
+        if (tipo === "bi") {
+
+            tabs[1].classList.add("active");
+
+            document
+                .getElementById("formBI")
+                .classList.add("active");
+
+        }
+
+    }
+
+
+    /* =====================================================
+       BANCO DE DADOS SIMULADO
+       
+       APENAS PARA TESTES.
+       
+       NO SISTEMA FINAL, SUBSTITUIR POR FIREBASE/
+       FIRESTORE OU API DO BACKEND.
+       ===================================================== */
+
+    const candidatosTeste = [
+
+        {
+            numeroInscricao: "MEN-EDU-000001/2026",
+            nome: "CANDIDATO DE TESTE",
+            bi: "000000000LA000",
+            categoria: "Professor do Ensino Primário e Secundário",
+            regime: "Regime Especial - Educação",
+            habilitacoes: "Licenciatura",
+            especialidade: "Matemática",
+            municipio: "Menongue",
+            data: "15/07/2026",
+            status: "Admitido ao teste",
+            situacaoTeste: "Teste ainda não realizado",
+            nota: "—"
+        }
+
+    ];
+
+
+    /* =====================================================
+       ELEMENTOS
+       ===================================================== */
+
+    const formInscricao =
+        document.getElementById("formInscricao");
+
+    const formBI =
+        document.getElementById("formBI");
+
+    const resultado =
+        document.getElementById("resultadoConsulta");
+
+    const loading =
+        document.getElementById("loadingConsulta");
+
+    const message =
+        document.getElementById("consultaMessage");
+
+
+    /* =====================================================
+       CONSULTA POR NÚMERO DE INSCRIÇÃO
+       ===================================================== */
+
+    formInscricao.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const numero =
+            document
+                .getElementById("numeroInscricao")
+                .value
+                .trim()
+                .toUpperCase();
+
+        consultarCandidato("inscricao", numero);
+
+    });
+
+
+    /* =====================================================
+       CONSULTA POR BI
+       ===================================================== */
+
+    formBI.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const bi =
+            document
+                .getElementById("numeroBI")
+                .value
+                .trim()
+                .toUpperCase();
+
+        consultarCandidato("bi", bi);
+
+    });
+
+
+    /* =====================================================
+       FUNÇÃO DE CONSULTA
+       ===================================================== */
+
+    function consultarCandidato(tipo, valor) {
+
+        esconderMensagem();
+
+        resultado.style.display = "none";
+
+        loading.style.display = "block";
+
+
+        setTimeout(function() {
+
+            let candidato = null;
+
+
+            if (tipo === "inscricao") {
+
+                candidato =
+                    candidatosTeste.find(
+                        item =>
+                            item.numeroInscricao === valor
+                    );
+
+            }
+
+
+            if (tipo === "bi") {
+
+                candidato =
+                    candidatosTeste.find(
+                        item =>
+                            item.bi === valor
+                    );
+
+            }
+
+
+            loading.style.display = "none";
+
+
+            if (!candidato) {
+
+                mostrarMensagem(
+                    "Não foi encontrada nenhuma candidatura com os dados informados. Verifique o número de inscrição ou o BI e tente novamente.",
+                    "error"
+                );
+
+                return;
+
+            }
+
+
+            preencherResultado(candidato);
+
+            resultado.style.display = "block";
+
+            resultado.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }, 800);
+
+    }
+
+
+    /* =====================================================
+       PREENCHER RESULTADO
+       ===================================================== */
+
+    function preencherResultado(candidato) {
+
+        document
+            .getElementById("resultadoNumero")
+            .textContent =
+            candidato.numeroInscricao;
+
+
+        document
+            .getElementById("resultadoNome")
+            .textContent =
+            candidato.nome;
+
+
+        document
+            .getElementById("resultadoBI")
+            .textContent =
+            candidato.bi;
+
+
+        document
+            .getElementById("resultadoCategoria")
+            .textContent =
+            candidato.categoria;
+
+
+        document
+            .getElementById("resultadoRegime")
+            .textContent =
+            candidato.regime;
+
+
+        document
+            .getElementById("resultadoHabilitacoes")
+            .textContent =
+            candidato.habilitacoes;
+
+
+        document
+            .getElementById("resultadoEspecialidade")
+            .textContent =
+            candidato.especialidade;
+
+
+        document
+            .getElementById("resultadoMunicipio")
+            .textContent =
+            candidato.municipio;
+
+
+        document
+            .getElementById("resultadoData")
+            .textContent =
+            candidato.data;
+
+
+        document
+            .getElementById("resultadoStatus")
+            .textContent =
+            candidato.status;
+
+
+        document
+            .getElementById("situacaoTeste")
+            .textContent =
+            candidato.situacaoTeste;
+
+
+        document
+            .getElementById("notaTeste")
+            .textContent =
+            candidato.nota;
+
+    }
+
+
+    /* =====================================================
+       MENSAGENS
+       ===================================================== */
+
+    function mostrarMensagem(texto, tipo) {
+
+        message.textContent = texto;
+
+        message.className =
+            "consulta-message " + tipo;
+
+    }
+
+
+    function esconderMensagem() {
+
+        message.textContent = "";
+
+        message.className =
+            "consulta-message";
+
+    }
+
+
+    /* =====================================================
+       NOVA CONSULTA
+       ===================================================== */
+
+    function novaConsulta() {
+
+        resultado.style.display = "none";
+
+        esconderMensagem();
+
+        formInscricao.reset();
+
+        formBI.reset();
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+    }
+
+</script>
+
+</body>
+</html>

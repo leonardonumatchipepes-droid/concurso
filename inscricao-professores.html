@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="pt">
+<link rel="stylesheet" href="css/style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inscrição de Professores | Concurso Público 2026 | Menongue</title>
+
+    <meta name="description"
+          content="Portal de Inscrição de Professores - Concurso Público de Ingresso Externo 2026 - Sector da Educação - Município de Menongue">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="institution">
+        <div class="logo">
+            <img src="logo.png" alt="Logotipo Institucional">
+        </div>
+
+        <div class="institution-text">
+            <h1>REPÚBLICA DE ANGOLA</h1>
+            <h2>GOVERNO PROVINCIAL DO CUBANGO</h2>
+            <h3>ADMINISTRAÇÃO MUNICIPAL DE MENONGUE</h3>
+            <p>DIRECÇÃO MUNICIPAL DA EDUCAÇÃO</p>
+        </div>
+    </div>
+</header>
+
+
+<section class="hero">
+
+    <span class="badge">CONCURSO PÚBLICO 2026</span>
+
+    <h1>Inscrição de Professores</h1>
+
+    <p>
+        Concurso Público de Ingresso Externo no Sector da Educação
+    </p>
+
+    <p class="subtitle">
+        Carreira Especial dos Agentes da Educação
+    </p>
+
+</section>
+
+
+<main class="container">
+
+    <div class="alert">
+        <strong>ATENÇÃO:</strong>
+        Preencha correctamente todos os campos e anexe os documentos exigidos.
+        As informações prestadas serão verificadas pelas entidades competentes.
+    </div>
+
+
+    <form id="formInscricao" enctype="multipart/form-data">
+
+
+        <!-- ========================= -->
+        <!-- 1. IDENTIFICAÇÃO -->
+        <!-- ========================= -->
+
+        <section class="form-section">
+
+            <h2>1. Identificação do Candidato</h2>
+
+            <div class="grid">
+
+                <div class="field full">
+                    <label>Nome Completo *</label>
+                    <input type="text"
+                           name="nome"
+                           required
+                           placeholder="Digite o seu nome completo">
+                </div>
+
+
+                <div class="field">
+                    <label>Data de Nascimento *</label>
+                    <input type="date"
+                           name="dataNascimento"
+                           required>
+                </div>
+
+
+                <div class="field">
+                    <label>Sexo *</label>
+
+                    <select name="sexo" required>
+                        <option value="">Seleccione</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+                    <label>Naturalidade *</label>
+                    <input type="text"
+                           name="naturalidade"
+                           required>
+                </div>
+
+
+                <div class="field">
+                    <label>Município de Naturalidade *</label>
+                    <input type="text"
+                           name="municipioNaturalidade"
+                           required>
+                </div>
+
+
+                <div class="field">
+                    <label>Província de Naturalidade *</label>
+
+                    <select name="provinciaNaturalidade" required>
+
+                        <option value="">Seleccione a província</option>
+
+                        <option>Cuando Cubango</option>
+                        <option>Bengo</option>
+                        <option>Benguela</option>
+                        <option>Bié</option>
+                        <option>Cabinda</option>
+                        <option>Catumbela</option>
+                        <option>Cuanza Norte</option>
+                        <option>Cuanza Sul</option>
+                        <option>Cunene</option>
+                        <option>Huambo</option>
+                        <option>Huíla</option>
+                        <option>Ícolo e Bengo</option>
+                        <option>Luanda</option>
+                        <option>Lunda Norte</option>
+                        <option>Lunda Sul</option>
+                        <option>Malanje</option>
+                        <option>Moxico</option>
+                        <option>Moxico Leste</option>
+                        <option>Namibe</option>
+                        <option>Uíge</option>
+                        <option>Zaire</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+                    <label>Número do Bilhete de Identidade *</label>
+
+                    <input type="text"
+                           name="bi"
+                           required
+                           placeholder="000000000XX000">
+
+                </div>
+
+
+                <div class="field">
+                    <label>Data de Emissão do BI *</label>
+
+                    <input type="date"
+                           name="dataEmissaoBI"
+                           required>
+
+                </div>
+
+
+                <div class="field">
+                    <label>Telefone *</label>
+
+                    <input type="tel"
+                           name="telefone"
+                           required
+                           placeholder="+244 9XX XXX XXX">
+
+                </div>
+
+
+                <div class="field">
+                    <label>E-mail</label>
+
+                    <input type="email"
+                           name="email"
+                           placeholder="exemplo@email.com">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- 2. CANDIDATURA -->
+        <!-- ========================= -->
+
+        <section class="form-section">
+
+            <h2>2. Dados da Candidatura</h2>
+
+            <div class="grid">
+
+                <div class="field">
+
+                    <label>Nível de Ensino a que se candidata *</label>
+
+                    <select name="nivelEnsino" required>
+
+                        <option value="">Seleccione</option>
+
+                        <option value="Ensino Primário">
+                            Ensino Primário
+                        </option>
+
+                        <option value="I Ciclo">
+                            I Ciclo do Ensino Secundário
+                        </option>
+
+                        <option value="II Ciclo">
+                            II Ciclo do Ensino Secundário
+                        </option>
+
+                        <option value="Ensino Secundário Técnico-Profissional">
+                            Ensino Secundário Técnico-Profissional
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>Categoria *</label>
+
+                    <select name="categoria" required>
+
+                        <option value="">Seleccione</option>
+
+                        <option>Professor do Ensino Primário e Secundário – 6.º Grau</option>
+
+                        <option>Professor do Ensino Primário e Secundário – 13.º Grau</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>Disciplina / Especialidade *</label>
+
+                    <input type="text"
+                           name="disciplina"
+                           required
+                           placeholder="Ex.: Matemática">
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>Município a que se candidata *</label>
+
+                    <select name="municipio" required>
+
+                        <option value="">Seleccione</option>
+
+                        <option>Menongue</option>
+
+                        <option>Cuito Cuanavale</option>
+
+                        <option>Dirico</option>
+
+                        <option>Mavinga</option>
+
+                        <option>Calai</option>
+
+                        <option>Cuangar</option>
+
+                        <option>Nancova</option>
+
+                        <option>Rivungo</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- 3. HABILITAÇÕES -->
+        <!-- ========================= -->
+
+        <section class="form-section">
+
+            <h2>3. Habilitações Literárias</h2>
+
+            <div class="grid">
+
+                <div class="field">
+
+                    <label>Habilitação Literária *</label>
+
+                    <select name="habilitacao" required>
+
+                        <option value="">Seleccione</option>
+
+                        <option>Ensino Secundário</option>
+
+                        <option>Bacharelato</option>
+
+                        <option>Licenciatura</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>Especialidade / Curso *</label>
+
+                    <input type="text"
+                           name="curso"
+                           required
+                           placeholder="Ex.: Ensino da Matemática">
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>Instituição de Formação *</label>
+
+                    <input type="text"
+                           name="instituicao"
+                           required>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>Ano de Conclusão *</label>
+
+                    <input type="number"
+                           name="anoConclusao"
+                           min="1950"
+                           max="2026"
+                           required>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- 4. DOCUMENTOS -->
+        <!-- ========================= -->
+
+        <section class="form-section">
+
+            <h2>4. Documentos para Candidatura</h2>
+
+            <p class="info">
+                Anexe os documentos exigidos nos Termos de Referência.
+                Os ficheiros devem estar legíveis.
+            </p>
+
+
+            <div class="upload">
+
+                <label>
+                    Requerimento dirigido à Ministra da Educação *
+                </label>
+
+                <input type="file"
+                       name="requerimento"
+                       accept=".pdf,.jpg,.jpeg,.png"
+                       required>
+
+            </div>
+
+
+            <div class="upload">
+
+                <label>
+                    Fotocópia do Bilhete de Identidade actualizado *
+                </label>
+
+                <input type="file"
+                       name="biDocumento"
+                       accept=".pdf,.jpg,.jpeg,.png"
+                       required>
+
+            </div>
+
+
+            <div class="upload">
+
+                <label>
+                    Fotocópia do Certificado de Habilitações Literárias *
+                </label>
+
+                <input type="file"
+                       name="certificado"
+                       accept=".pdf,.jpg,.jpeg,.png"
+                       required>
+
+            </div>
+
+
+            <div class="upload">
+
+                <label>
+                    Declaração de Reconhecimento do INAAREES
+                    <span>(Obrigatória apenas para formação concluída no exterior)</span>
+                </label>
+
+                <input type="file"
+                       name="inaarees"
+                       accept=".pdf,.jpg,.jpeg,.png">
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- 5. DECLARAÇÃO -->
+        <!-- ========================= -->
+
+        <section class="form-section">
+
+            <h2>5. Declaração do Candidato</h2>
+
+            <div class="declaration">
+
+                <label>
+
+                    <input type="checkbox"
+                           name="declaracao"
+                           required>
+
+                    Declaro, sob compromisso de honra, que todas as informações
+                    prestadas nesta ficha são verdadeiras e que os documentos
+                    apresentados são autênticos. Declaro ainda estar ciente de
+                    que a prestação de falsas declarações ou apresentação de
+                    documentos falsos poderá determinar a exclusão do concurso
+                    e a responsabilização nos termos da legislação aplicável.
+
+                </label>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- BOTÃO -->
+        <!-- ========================= -->
+
+        <div class="submit-area">
+
+            <button type="submit">
+
+                ENVIAR INSCRIÇÃO
+
+            </button>
+
+            <p>
+                Após o envio, será gerado o comprovativo da sua inscrição.
+            </p>
+
+        </div>
+
+
+    </form>
+
+
+    <!-- ========================= -->
+    <!-- RECIBO -->
+    <!-- ========================= -->
+
+    <div id="recibo" class="recibo hidden">
+
+        <h2>RECIBO DE INSCRIÇÃO</h2>
+
+        <p>
+            <strong>Concurso Público de Ingresso Externo 2026</strong>
+        </p>
+
+        <p>
+            Sector da Educação – Município de Menongue
+        </p>
+
+        <hr>
+
+        <p>
+            Número de Inscrição:
+            <strong id="numeroInscricao"></strong>
+        </p>
+
+        <p>
+            Candidato:
+            <strong id="nomeRecibo"></strong>
+        </p>
+
+        <p>
+            BI:
+            <strong id="biRecibo"></strong>
+        </p>
+
+        <p>
+            Data de Inscrição:
+            <strong id="dataRecibo"></strong>
+        </p>
+
+        <p class="warning">
+
+            Este recibo comprova apenas a recepção da candidatura.
+            A admissão ao concurso está sujeita à verificação dos documentos
+            e ao cumprimento dos requisitos estabelecidos nos Termos de Referência.
+
+        </p>
+
+        <button onclick="window.print()">
+            IMPRIMIR RECIBO
+        </button>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 Administração Municipal de Menongue
+    </p>
+
+    <p>
+        Direcção Municipal da Educação
+    </p>
+
+    <p>
+        Concurso Público de Ingresso Externo 2026
+    </p>
+
+</footer>
+
+
+<script>
+
+const form = document.getElementById("formInscricao");
+
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+
+    const nome =
+        document.querySelector('[name="nome"]').value;
+
+    const bi =
+        document.querySelector('[name="bi"]').value;
+
+
+    // Geração automática do número de inscrição
+
+    const numero =
+        "MEN-" +
+        new Date().getFullYear() +
+        "-" +
+        Math.floor(100000 + Math.random() * 900000);
+
+
+    const data =
+        new Date().toLocaleDateString("pt-PT");
+
+
+    document.getElementById("numeroInscricao")
+        .textContent = numero;
+
+    document.getElementById("nomeRecibo")
+        .textContent = nome;
+
+    document.getElementById("biRecibo")
+        .textContent = bi;
+
+    document.getElementById("dataRecibo")
+        .textContent = data;
+
+
+    form.style.display = "none";
+
+    document.getElementById("recibo")
+        .classList.remove("hidden");
+
+
+    /*
+    IMPORTANTE:
+
+    Para enviar os dados para o e-mail institucional,
+    este formulário deverá ser conectado a um servidor/backend
+    ou a um serviço de processamento de formulários.
+
+    O código acima apenas demonstra o funcionamento
+    do formulário no navegador.
+    */
+
+});
+
+</script>
+
+</body>
+</html>

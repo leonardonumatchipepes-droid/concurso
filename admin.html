@@ -1,0 +1,1594 @@
+```html
+<!DOCTYPE html>
+<link rel="stylesheet" href="css/style.css">
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Área Administrativa | Concurso Público 2026</title>
+
+    <meta name="description"
+          content="Área reservada da Comissão Técnica Municipal de Recepção das Candidaturas do Concurso Público de Ingresso Externo 2026.">
+
+    <link rel="icon" href="assets/logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0b3d2e;
+            --primary-dark: #06271e;
+            --secondary: #d4af37;
+            --light: #f5f7f6;
+            --white: #ffffff;
+            --text: #1f2937;
+            --muted: #6b7280;
+            --border: #e5e7eb;
+            --danger: #dc2626;
+            --success: #15803d;
+            --warning: #d97706;
+            --info: #2563eb;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--light);
+            color: var(--text);
+        }
+
+        /* ================================
+           LOGIN
+        ================================= */
+
+        #loginPage {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background:
+                linear-gradient(
+                    rgba(6, 39, 30, 0.92),
+                    rgba(6, 39, 30, 0.92)
+                ),
+                url("assets/background.jpg") center/cover;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 450px;
+            background: var(--white);
+            border-radius: 18px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,.25);
+        }
+
+        .login-logo {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        .login-box h1 {
+            text-align: center;
+            font-size: 22px;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .login-box p {
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            outline: none;
+            font-size: 14px;
+            transition: .2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(11,61,46,.1);
+        }
+
+        .login-button {
+            width: 100%;
+            border: none;
+            padding: 14px;
+            border-radius: 9px;
+            background: var(--primary);
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .login-button:hover {
+            background: var(--primary-dark);
+        }
+
+        .login-error {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            background: #fee2e2;
+            color: var(--danger);
+            border-radius: 8px;
+            font-size: 13px;
+        }
+
+        /* ================================
+           DASHBOARD
+        ================================= */
+
+        #dashboard {
+            display: none;
+        }
+
+        .topbar {
+            height: 70px;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+        }
+
+        .brand-text h2 {
+            font-size: 15px;
+        }
+
+        .brand-text span {
+            font-size: 11px;
+            opacity: .8;
+        }
+
+        .user-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-name {
+            font-size: 13px;
+        }
+
+        .logout-btn {
+            border: 1px solid rgba(255,255,255,.4);
+            background: transparent;
+            color: white;
+            padding: 9px 15px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        .logout-btn:hover {
+            background: rgba(255,255,255,.1);
+        }
+
+        /* ================================
+           SIDEBAR
+        ================================= */
+
+        .layout {
+            display: flex;
+            min-height: calc(100vh - 70px);
+        }
+
+        .sidebar {
+            width: 240px;
+            background: #fff;
+            border-right: 1px solid var(--border);
+            padding: 20px 12px;
+        }
+
+        .menu-title {
+            font-size: 10px;
+            text-transform: uppercase;
+            color: var(--muted);
+            font-weight: 700;
+            padding: 10px;
+        }
+
+        .menu-item {
+            width: 100%;
+            border: none;
+            background: transparent;
+            padding: 12px;
+            text-align: left;
+            border-radius: 8px;
+            cursor: pointer;
+            color: var(--text);
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+
+        .menu-item:hover,
+        .menu-item.active {
+            background: #e8f1ed;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* ================================
+           CONTENT
+        ================================= */
+
+        .content {
+            flex: 1;
+            padding: 30px;
+            overflow-x: auto;
+        }
+
+        .page-title {
+            margin-bottom: 25px;
+        }
+
+        .page-title h1 {
+            font-size: 25px;
+            color: var(--primary);
+        }
+
+        .page-title p {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        /* ================================
+           CARDS
+        ================================= */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 22px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .stat-card span {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .stat-card h2 {
+            margin-top: 8px;
+            font-size: 28px;
+            color: var(--primary);
+        }
+
+        /* ================================
+           FILTERS
+        ================================= */
+
+        .filters {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+
+        .filter-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 12px;
+        }
+
+        .filter-grid input,
+        .filter-grid select {
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            outline: none;
+        }
+
+        /* ================================
+           TABLE
+        ================================= */
+
+        .table-container {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 1000px;
+        }
+
+        th {
+            background: #f8faf9;
+            padding: 14px;
+            text-align: left;
+            font-size: 11px;
+            color: var(--muted);
+            text-transform: uppercase;
+        }
+
+        td {
+            padding: 14px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+        }
+
+        tr:hover {
+            background: #fafafa;
+        }
+
+        /* ================================
+           STATUS
+        ================================= */
+
+        .status {
+            padding: 5px 9px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .received {
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
+
+        .analysis {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .admitted {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .excluded {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .placed {
+            background: #ede9fe;
+            color: #6d28d9;
+        }
+
+        /* ================================
+           BUTTONS
+        ================================= */
+
+        .btn {
+            border: none;
+            padding: 8px 12px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .btn-view {
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+
+        .btn-export {
+            background: var(--primary);
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        /* ================================
+           MODAL
+        ================================= */
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.55);
+            z-index: 500;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: white;
+            width: 100%;
+            max-width: 700px;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-header h2 {
+            color: var(--primary);
+            font-size: 20px;
+        }
+
+        .close {
+            border: none;
+            background: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .candidate-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .info-box {
+            background: #f8faf9;
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .info-box small {
+            display: block;
+            color: var(--muted);
+            font-size: 10px;
+            margin-bottom: 5px;
+        }
+
+        .info-box strong {
+            font-size: 13px;
+        }
+
+        .modal-actions {
+            margin-top: 25px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-admit {
+            background: var(--success);
+            color: white;
+        }
+
+        .btn-exclude {
+            background: var(--danger);
+            color: white;
+        }
+
+        /* ================================
+           RESPONSIVE
+        ================================= */
+
+        @media(max-width: 900px) {
+
+            .sidebar {
+                width: 65px;
+            }
+
+            .menu-title,
+            .menu-item span {
+                display: none;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .filter-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(max-width: 600px) {
+
+            .topbar {
+                padding: 0 15px;
+            }
+
+            .brand-text {
+                display: none;
+            }
+
+            .user-name {
+                display: none;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .candidate-info {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     PÁGINA DE LOGIN
+====================================================== -->
+
+<section id="loginPage">
+
+    <div class="login-box">
+
+        <img
+            src="assets/logo.png"
+            alt="Logotipo Institucional"
+            class="login-logo"
+        >
+
+        <h1>Área Administrativa</h1>
+
+        <p>
+            Concurso Público de Ingresso Externo 2026<br>
+            Sector da Educação – Município de Menongue
+        </p>
+
+        <form id="loginForm">
+
+            <div class="form-group">
+
+                <label for="email">
+                    E-mail institucional
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="admin@educacao.gov.ao"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="password">
+                    Palavra-passe
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Introduza a sua palavra-passe"
+                    required
+                >
+
+            </div>
+
+            <button
+                type="submit"
+                class="login-button"
+            >
+                Entrar no sistema
+            </button>
+
+            <div
+                id="loginError"
+                class="login-error"
+            >
+                Dados de acesso inválidos.
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DASHBOARD
+====================================================== -->
+
+<section id="dashboard">
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <img
+                src="assets/logo.png"
+                alt="Logotipo"
+            >
+
+            <div class="brand-text">
+
+                <h2>
+                    Portal de Gestão do Concurso
+                </h2>
+
+                <span>
+                    Administração Municipal de Menongue
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="user-area">
+
+            <span class="user-name">
+                Comissão Técnica Municipal
+            </span>
+
+            <button
+                class="logout-btn"
+                onclick="logout()"
+            >
+                Sair
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <div class="layout">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="menu-title">
+                Menu Principal
+            </div>
+
+            <button
+                class="menu-item active"
+                onclick="showPage('dashboardPage')"
+            >
+                📊 <span>Painel</span>
+            </button>
+
+            <button
+                class="menu-item"
+                onclick="showPage('candidatosPage')"
+            >
+                👥 <span>Candidatos</span>
+            </button>
+
+            <button
+                class="menu-item"
+                onclick="showPage('listasPage')"
+            >
+                📋 <span>Listas</span>
+            </button>
+
+            <button
+                class="menu-item"
+                onclick="showPage('relatoriosPage')"
+            >
+                📈 <span>Relatórios</span>
+            </button>
+
+        </aside>
+
+
+        <!-- CONTENT -->
+
+        <main class="content">
+
+
+            <!-- PAINEL -->
+
+            <div id="dashboardPage">
+
+                <div class="page-title">
+
+                    <h1>
+                        Painel de Controlo
+                    </h1>
+
+                    <p>
+                        Visão geral das candidaturas recebidas.
+                    </p>
+
+                </div>
+
+
+                <div class="stats">
+
+                    <div class="stat-card">
+                        <span>Total de inscrições</span>
+                        <h2 id="totalCandidatos">0</h2>
+                    </div>
+
+                    <div class="stat-card">
+                        <span>Professores</span>
+                        <h2 id="totalProfessores">0</h2>
+                    </div>
+
+                    <div class="stat-card">
+                        <span>Regime Geral</span>
+                        <h2 id="totalRegimeGeral">0</h2>
+                    </div>
+
+                    <div class="stat-card">
+                        <span>Em análise</span>
+                        <h2 id="totalAnalise">0</h2>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CANDIDATOS -->
+
+            <div id="candidatosPage" style="display:none;">
+
+                <div class="page-title">
+
+                    <h1>
+                        Gestão de Candidaturas
+                    </h1>
+
+                    <p>
+                        Consulte, valide e acompanhe as candidaturas.
+                    </p>
+
+                </div>
+
+
+                <div class="filters">
+
+                    <div class="filter-grid">
+
+                        <input
+                            type="search"
+                            id="searchInput"
+                            placeholder="Pesquisar por nome ou BI..."
+                            oninput="filterCandidates()"
+                        >
+
+                        <select
+                            id="tipoFilter"
+                            onchange="filterCandidates()"
+                        >
+
+                            <option value="">
+                                Todos os concursos
+                            </option>
+
+                            <option value="professor">
+                                Professores
+                            </option>
+
+                            <option value="regime-geral">
+                                Regime Geral
+                            </option>
+
+                        </select>
+
+
+                        <select
+                            id="statusFilter"
+                            onchange="filterCandidates()"
+                        >
+
+                            <option value="">
+                                Todos os estados
+                            </option>
+
+                            <option value="recebida">
+                                Recebida
+                            </option>
+
+                            <option value="analise">
+                                Em análise
+                            </option>
+
+                            <option value="admitido">
+                                Admitido
+                            </option>
+
+                            <option value="excluido">
+                                Excluído
+                            </option>
+
+                            <option value="colocado">
+                                Colocado
+                            </option>
+
+                        </select>
+
+
+                        <select
+                            id="municipioFilter"
+                            onchange="filterCandidates()"
+                        >
+
+                            <option value="">
+                                Todos os municípios
+                            </option>
+
+                            <option value="Menongue">
+                                Menongue
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="btn btn-export"
+                    onclick="exportCSV()"
+                >
+                    Exportar candidaturas CSV
+                </button>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Nº Inscrição</th>
+
+                                <th>Nome</th>
+
+                                <th>BI</th>
+
+                                <th>Tipo</th>
+
+                                <th>Especialidade</th>
+
+                                <th>Estado</th>
+
+                                <th>Data</th>
+
+                                <th>Acção</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="candidatesTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- LISTAS -->
+
+            <div
+                id="listasPage"
+                style="display:none;"
+            >
+
+                <div class="page-title">
+
+                    <h1>
+                        Listas do Concurso
+                    </h1>
+
+                    <p>
+                        Gestão das listas provisórias e definitivas.
+                    </p>
+
+                </div>
+
+                <button class="btn btn-export">
+                    Gerar Lista de Admitidos
+                </button>
+
+                <button class="btn btn-export">
+                    Gerar Lista de Excluídos
+                </button>
+
+                <button class="btn btn-export">
+                    Gerar Lista Final
+                </button>
+
+            </div>
+
+
+            <!-- RELATÓRIOS -->
+
+            <div
+                id="relatoriosPage"
+                style="display:none;"
+            >
+
+                <div class="page-title">
+
+                    <h1>
+                        Relatórios
+                    </h1>
+
+                    <p>
+                        Relatórios estatísticos do processo concursal.
+                    </p>
+
+                </div>
+
+                <button class="btn btn-export">
+                    Relatório Geral
+                </button>
+
+                <button class="btn btn-export">
+                    Relatório de Professores
+                </button>
+
+                <button class="btn btn-export">
+                    Relatório do Regime Geral
+                </button>
+
+            </div>
+
+
+        </main>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MODAL DO CANDIDATO
+====================================================== -->
+
+<div
+    class="modal"
+    id="candidateModal"
+>
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>
+                Detalhes da Candidatura
+            </h2>
+
+            <button
+                class="close"
+                onclick="closeModal()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div
+            class="candidate-info"
+            id="candidateInfo"
+        >
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                class="btn btn-admit"
+                onclick="changeStatus('admitido')"
+            >
+                Admitir
+            </button>
+
+            <button
+                class="btn btn-exclude"
+                onclick="changeStatus('excluido')"
+            >
+                Excluir
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    /*
+    ========================================================
+    DADOS TEMPORÁRIOS DE DEMONSTRAÇÃO
+
+    Na versão final estes dados devem vir do Firebase
+    Firestore e a autenticação deve ser feita pelo
+    Firebase Authentication.
+    ========================================================
+    */
+
+    let candidates = [
+
+        {
+            id: "MEN-2026-0001",
+            nome: "Exemplo de Candidato",
+            bi: "000000000LA000",
+            tipo: "professor",
+            especialidade: "Matemática",
+            status: "recebida",
+            data: "2026-07-24"
+        },
+
+        {
+            id: "MEN-2026-0002",
+            nome: "Candidato Regime Geral",
+            bi: "000000001LA000",
+            tipo: "regime-geral",
+            especialidade: "Técnico de Informática",
+            status: "analise",
+            data: "2026-07-24"
+        }
+
+    ];
+
+
+    let selectedCandidate = null;
+
+
+    /* LOGIN */
+
+    document
+        .getElementById("loginForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const email =
+                document.getElementById("email").value;
+
+            const password =
+                document.getElementById("password").value;
+
+
+            /*
+            DEMONSTRAÇÃO
+
+            SUBSTITUIR POR FIREBASE AUTHENTICATION
+            */
+
+            if (
+                email === "admin@educacao.gov.ao" &&
+                password === "admin123"
+            ) {
+
+                document
+                    .getElementById("loginPage")
+                    .style.display = "none";
+
+                document
+                    .getElementById("dashboard")
+                    .style.display = "block";
+
+                loadCandidates();
+
+            } else {
+
+                document
+                    .getElementById("loginError")
+                    .style.display = "block";
+
+            }
+
+        });
+
+
+    /* LOGOUT */
+
+    function logout() {
+
+        document
+            .getElementById("dashboard")
+            .style.display = "none";
+
+        document
+            .getElementById("loginPage")
+            .style.display = "flex";
+
+    }
+
+
+    /* NAVEGAÇÃO */
+
+    function showPage(pageId) {
+
+        const pages = [
+            "dashboardPage",
+            "candidatosPage",
+            "listasPage",
+            "relatoriosPage"
+        ];
+
+        pages.forEach(function(page) {
+
+            document
+                .getElementById(page)
+                .style.display = "none";
+
+        });
+
+
+        document
+            .getElementById(pageId)
+            .style.display = "block";
+
+    }
+
+
+    /* CARREGAR CANDIDATOS */
+
+    function loadCandidates() {
+
+        const table =
+            document.getElementById("candidatesTable");
+
+        table.innerHTML = "";
+
+
+        candidates.forEach(function(candidate) {
+
+            const row =
+                document.createElement("tr");
+
+
+            row.innerHTML = `
+
+                <td>${candidate.id}</td>
+
+                <td>${candidate.nome}</td>
+
+                <td>${candidate.bi}</td>
+
+                <td>
+                    ${
+                        candidate.tipo === "professor"
+                        ? "Professor"
+                        : "Regime Geral"
+                    }
+                </td>
+
+                <td>${candidate.especialidade}</td>
+
+                <td>
+                    <span class="status ${candidate.status}">
+                        ${formatStatus(candidate.status)}
+                    </span>
+                </td>
+
+                <td>${candidate.data}</td>
+
+                <td>
+                    <button
+                        class="btn btn-view"
+                        onclick="viewCandidate('${candidate.id}')"
+                    >
+                        Ver
+                    </button>
+                </td>
+
+            `;
+
+            table.appendChild(row);
+
+        });
+
+
+        updateStats();
+
+    }
+
+
+    /* ESTATÍSTICAS */
+
+    function updateStats() {
+
+        document
+            .getElementById("totalCandidatos")
+            .innerText = candidates.length;
+
+
+        document
+            .getElementById("totalProfessores")
+            .innerText =
+            candidates.filter(
+                c => c.tipo === "professor"
+            ).length;
+
+
+        document
+            .getElementById("totalRegimeGeral")
+            .innerText =
+            candidates.filter(
+                c => c.tipo === "regime-geral"
+            ).length;
+
+
+        document
+            .getElementById("totalAnalise")
+            .innerText =
+            candidates.filter(
+                c => c.status === "analise"
+            ).length;
+
+    }
+
+
+    /* FORMATAR ESTADO */
+
+    function formatStatus(status) {
+
+        const statuses = {
+
+            recebida: "Recebida",
+
+            analise: "Em análise",
+
+            admitido: "Admitido",
+
+            excluido: "Excluído",
+
+            colocado: "Colocado"
+
+        };
+
+        return statuses[status] || status;
+
+    }
+
+
+    /* VER CANDIDATO */
+
+    function viewCandidate(id) {
+
+        selectedCandidate =
+            candidates.find(
+                c => c.id === id
+            );
+
+
+        if (!selectedCandidate) return;
+
+
+        document
+            .getElementById("candidateInfo")
+            .innerHTML = `
+
+                <div class="info-box">
+                    <small>Nº de Inscrição</small>
+                    <strong>${selectedCandidate.id}</strong>
+                </div>
+
+                <div class="info-box">
+                    <small>Nome Completo</small>
+                    <strong>${selectedCandidate.nome}</strong>
+                </div>
+
+                <div class="info-box">
+                    <small>Bilhete de Identidade</small>
+                    <strong>${selectedCandidate.bi}</strong>
+                </div>
+
+                <div class="info-box">
+                    <small>Tipo de Concurso</small>
+                    <strong>
+                        ${
+                            selectedCandidate.tipo === "professor"
+                            ? "Professor"
+                            : "Regime Geral"
+                        }
+                    </strong>
+                </div>
+
+                <div class="info-box">
+                    <small>Especialidade</small>
+                    <strong>${selectedCandidate.especialidade}</strong>
+                </div>
+
+                <div class="info-box">
+                    <small>Estado</small>
+                    <strong>${formatStatus(selectedCandidate.status)}</strong>
+                </div>
+
+            `;
+
+
+        document
+            .getElementById("candidateModal")
+            .style.display = "flex";
+
+    }
+
+
+    /* FECHAR MODAL */
+
+    function closeModal() {
+
+        document
+            .getElementById("candidateModal")
+            .style.display = "none";
+
+    }
+
+
+    /* ALTERAR ESTADO */
+
+    function changeStatus(newStatus) {
+
+        if (!selectedCandidate) return;
+
+
+        selectedCandidate.status =
+            newStatus;
+
+
+        closeModal();
+
+        loadCandidates();
+
+        alert(
+            "Estado da candidatura actualizado para: "
+            + formatStatus(newStatus)
+        );
+
+    }
+
+
+    /* FILTRAR */
+
+    function filterCandidates() {
+
+        const search =
+            document
+                .getElementById("searchInput")
+                .value
+                .toLowerCase();
+
+
+        const tipo =
+            document
+                .getElementById("tipoFilter")
+                .value;
+
+
+        const status =
+            document
+                .getElementById("statusFilter")
+                .value;
+
+
+        const filtered =
+            candidates.filter(function(candidate) {
+
+                const matchSearch =
+                    candidate.nome
+                        .toLowerCase()
+                        .includes(search)
+                    ||
+                    candidate.bi
+                        .toLowerCase()
+                        .includes(search);
+
+
+                const matchTipo =
+                    !tipo ||
+                    candidate.tipo === tipo;
+
+
+                const matchStatus =
+                    !status ||
+                    candidate.status === status;
+
+
+                return (
+                    matchSearch &&
+                    matchTipo &&
+                    matchStatus
+                );
+
+            });
+
+
+        const table =
+            document.getElementById("candidatesTable");
+
+
+        table.innerHTML = "";
+
+
+        filtered.forEach(function(candidate) {
+
+            const row =
+                document.createElement("tr");
+
+
+            row.innerHTML = `
+
+                <td>${candidate.id}</td>
+
+                <td>${candidate.nome}</td>
+
+                <td>${candidate.bi}</td>
+
+                <td>
+                    ${
+                        candidate.tipo === "professor"
+                        ? "Professor"
+                        : "Regime Geral"
+                    }
+                </td>
+
+                <td>${candidate.especialidade}</td>
+
+                <td>
+                    <span class="status ${candidate.status}">
+                        ${formatStatus(candidate.status)}
+                    </span>
+                </td>
+
+                <td>${candidate.data}</td>
+
+                <td>
+                    <button
+                        class="btn btn-view"
+                        onclick="viewCandidate('${candidate.id}')"
+                    >
+                        Ver
+                    </button>
+                </td>
+
+            `;
+
+
+            table.appendChild(row);
+
+        });
+
+    }
+
+
+    /* EXPORTAR CSV */
+
+    function exportCSV() {
+
+        let csv =
+            "Numero,Nome,BI,Tipo,Especialidade,Estado,Data\n";
+
+
+        candidates.forEach(function(candidate) {
+
+            csv +=
+                `"${candidate.id}",` +
+                `"${candidate.nome}",` +
+                `"${candidate.bi}",` +
+                `"${candidate.tipo}",` +
+                `"${candidate.especialidade}",` +
+                `"${candidate.status}",` +
+                `"${candidate.data}"\n`;
+
+        });
+
+
+        const blob =
+            new Blob(
+                [csv],
+                {
+                    type: "text/csv;charset=utf-8;"
+                }
+            );
+
+
+        const url =
+            URL.createObjectURL(blob);
+
+
+        const link =
+            document.createElement("a");
+
+
+        link.href = url;
+
+        link.download =
+            "candidaturas-concurso-educacao-menongue-2026.csv";
+
+
+        link.click();
+
+
+        URL.revokeObjectURL(url);
+
+    }
+
+</script>
+
+</body>
+</html>
+```
