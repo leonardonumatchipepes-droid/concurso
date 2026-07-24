@@ -1,2409 +1,1171 @@
 /* =========================================================
-   PORTAL DO CONCURSO PÚBLICO DA EDUCAÇÃO – MENONGUE 2026
-   CSS GLOBAL
-   Arquivo: assets/css/style.css
-
-   Utilizado pelas páginas públicas do portal.
-========================================================= */
-
+   CONCURSO PÚBLICO DA EDUCAÇÃO – MENONGUE 2026
+   CSS GLOBAL DO PORTAL
+   ========================================================= */
 
 /* =========================================================
-   1. VARIÁVEIS GLOBAIS
-========================================================= */
+   1. RESET E CONFIGURAÇÕES GERAIS
+   ========================================================= */
 
 :root {
+    --primary: #0b5d3b;
+    --primary-dark: #08462d;
+    --primary-light: #eaf5ef;
 
-    /* CORES INSTITUCIONAIS */
-    --primary: #0b3d2e;
-    --primary-dark: #06291f;
-    --primary-light: #126247;
+    --secondary: #d4a72c;
+    --secondary-dark: #b58b1e;
 
-    --secondary: #d4a017;
-    --secondary-light: #e8bd43;
-    --secondary-dark: #a97b00;
+    --angola-red: #ce1126;
+    --angola-black: #111111;
 
-    --accent: #0f6b4f;
-
-    /* CORES NEUTRAS */
     --white: #ffffff;
     --black: #111111;
 
-    --text: #24302b;
-    --text-light: #65716c;
+    --gray-50: #f8faf9;
+    --gray-100: #f1f4f2;
+    --gray-200: #e2e8e5;
+    --gray-300: #cbd5d0;
+    --gray-500: #64746c;
+    --gray-600: #4b5a52;
+    --gray-700: #34423b;
+    --gray-800: #1f2a25;
 
-    --background: #f5f7f6;
-    --surface: #ffffff;
-    --surface-light: #f8faf9;
-
-    --border: #e1e7e4;
-    --border-dark: #cbd5d0;
-
-    /* ESTADOS */
     --success: #198754;
+    --danger: #dc3545;
     --warning: #f0ad00;
-    --danger: #c0392b;
-    --info: #1976d2;
+    --info: #0d6efd;
 
-    /* SOMBRAS */
-    --shadow-sm:
-        0 2px 8px rgba(0, 0, 0, 0.05);
+    --font-family:
+        "Inter",
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
 
-    --shadow:
-        0 8px 25px rgba(0, 0, 0, 0.08);
+    --container: 1200px;
 
-    --shadow-lg:
-        0 15px 45px rgba(0, 0, 0, 0.12);
-
-    /* DIMENSÕES */
-    --container-width: 1200px;
-
-    --header-height: 82px;
-
-    /* BORDAS */
     --radius-sm: 6px;
     --radius: 10px;
     --radius-lg: 16px;
-    --radius-xl: 24px;
 
-    /* TRANSIÇÕES */
+    --shadow-sm:
+        0 2px 8px rgba(0, 0, 0, 0.06);
+
+    --shadow:
+        0 8px 30px rgba(0, 0, 0, 0.08);
+
     --transition:
         all 0.25s ease;
-
 }
 
-
-/* =========================================================
-   2. RESET
-========================================================= */
-
-*,
-*::before,
-*::after {
-
+* {
     margin: 0;
     padding: 0;
-
     box-sizing: border-box;
-
 }
-
 
 html {
-
     scroll-behavior: smooth;
-
+    font-size: 16px;
 }
-
 
 body {
-
-    font-family:
-        "Inter",
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-
-    background: var(--background);
-
-    color: var(--text);
-
+    min-height: 100vh;
+    font-family: var(--font-family);
+    color: var(--gray-800);
+    background: var(--gray-50);
     line-height: 1.6;
-
-    font-size: 15px;
-
-    overflow-x: hidden;
-
 }
 
+body.menu-open {
+    overflow: hidden;
+}
 
 img {
-
     max-width: 100%;
-
-    height: auto;
-
     display: block;
-
 }
-
 
 a {
-
     color: inherit;
-
     text-decoration: none;
-
 }
-
 
 button,
 input,
 select,
 textarea {
-
-    font-family: inherit;
-
+    font: inherit;
 }
-
 
 button {
-
     cursor: pointer;
-
 }
-
 
 ul,
 ol {
-
     list-style: none;
-
 }
 
-
 /* =========================================================
-   3. CONTAINER
-========================================================= */
+   2. CONTAINER
+   ========================================================= */
 
 .container {
-
-    width: 100%;
-
-    max-width: var(--container-width);
-
-    margin: 0 auto;
-
-    padding-left: 24px;
-
-    padding-right: 24px;
-
+    width: min(92%, var(--container));
+    margin-inline: auto;
 }
 
-
 /* =========================================================
-   4. BARRA SUPERIOR
-========================================================= */
+   3. BARRA SUPERIOR
+   ========================================================= */
 
 .top-bar {
-
     background: var(--primary-dark);
-
-    color: rgba(255, 255, 255, 0.88);
-
-    font-size: 12px;
-
-    border-bottom:
-        1px solid rgba(255, 255, 255, 0.08);
-
+    color: var(--white);
+    font-size: 0.82rem;
 }
-
 
 .top-bar-content {
-
-    min-height: 36px;
-
+    min-height: 38px;
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     gap: 20px;
-
 }
 
-
-.institution-location,
-.institution-contact {
-
+.institution-info,
+.contact-info {
     display: flex;
-
     align-items: center;
-
     gap: 20px;
-
 }
-
 
 .top-bar span {
-
     display: inline-flex;
-
     align-items: center;
-
     gap: 7px;
-
 }
-
 
 .top-bar i {
-
     color: var(--secondary);
-
 }
 
-
 /* =========================================================
-   5. CABEÇALHO PRINCIPAL
-========================================================= */
+   4. HEADER PRINCIPAL
+   ========================================================= */
 
 .main-header {
-
     position: sticky;
-
     top: 0;
-
     z-index: 1000;
-
-    background:
-        rgba(255, 255, 255, 0.97);
-
-    backdrop-filter:
-        blur(10px);
-
-    border-bottom:
-        1px solid var(--border);
-
-    box-shadow:
-        0 2px 10px rgba(0, 0, 0, 0.03);
-
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid var(--gray-200);
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(10px);
 }
-
 
 .header-content {
-
-    min-height:
-        var(--header-height);
-
+    min-height: 82px;
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     gap: 30px;
-
 }
 
-
 /* =========================================================
-   6. MARCA INSTITUCIONAL
-========================================================= */
+   5. MARCA / LOGÓTIPOS
+   ========================================================= */
 
 .brand {
-
     display: flex;
-
     align-items: center;
-
-    gap: 14px;
-
-    flex-shrink: 0;
-
+    gap: 12px;
 }
 
-
-.brand-logos {
-
+.logo {
+    width: 54px;
+    height: 54px;
     display: flex;
-
     align-items: center;
-
-    gap: 10px;
-
+    justify-content: center;
 }
 
-
-.brand-logos img {
-
+.logo img {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-
 }
-
-
-.logo-angola {
-
-    width: 48px;
-
-    height: 52px;
-
-}
-
-
-.logo-educacao {
-
-    width: 52px;
-
-    height: 52px;
-
-}
-
 
 .brand-text {
-
     display: flex;
-
     flex-direction: column;
-
     line-height: 1.3;
-
 }
-
 
 .brand-text strong {
-
-    color: var(--primary);
-
-    font-size: 12px;
-
-    font-weight: 800;
-
-    letter-spacing: 0.3px;
-
+    color: var(--primary-dark);
+    font-size: 0.86rem;
 }
-
 
 .brand-text span {
-
-    color: var(--text-light);
-
-    font-size: 10px;
-
-    font-weight: 500;
-
+    color: var(--gray-600);
+    font-size: 0.72rem;
 }
 
-
 /* =========================================================
-   7. NAVEGAÇÃO
-========================================================= */
+   6. NAVEGAÇÃO
+   ========================================================= */
 
 .navbar {
-
     display: flex;
-
     align-items: center;
-
-    gap: 4px;
-
+    gap: 5px;
 }
-
 
 .nav-link {
-
     position: relative;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 7px;
-
-    padding: 9px 12px;
-
-    color: var(--text);
-
-    font-size: 13px;
-
+    padding: 10px 12px;
+    color: var(--gray-700);
+    font-size: 0.88rem;
     font-weight: 600;
-
     border-radius: var(--radius-sm);
-
-    transition:
-        var(--transition);
-
+    transition: var(--transition);
 }
 
-
-.nav-link:hover {
-
-    color: var(--primary);
-
-    background:
-        var(--surface-light);
-
-}
-
-
+.nav-link:hover,
 .nav-link.active {
-
     color: var(--primary);
-
+    background: var(--primary-light);
 }
-
-
-.nav-link.active::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 12px;
-
-    right: 12px;
-
-    bottom: 2px;
-
-    height: 2px;
-
-    background: var(--secondary);
-
-    border-radius: 10px;
-
-}
-
 
 .nav-button {
-
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
-
     gap: 8px;
-
     margin-left: 8px;
-
-    padding: 11px 17px;
-
+    padding: 11px 18px;
     color: var(--white);
-
     background: var(--primary);
-
-    border-radius: var(--radius-sm);
-
-    font-size: 13px;
-
+    border-radius: var(--radius);
+    font-size: 0.88rem;
     font-weight: 700;
-
-    transition:
-        var(--transition);
-
+    transition: var(--transition);
 }
-
 
 .nav-button:hover {
-
-    background:
-        var(--primary-light);
-
-    transform:
-        translateY(-1px);
-
-    box-shadow:
-        var(--shadow-sm);
-
+    background: var(--primary-dark);
+    transform: translateY(-1px);
 }
-
-
-/* =========================================================
-   8. MENU MOBILE
-========================================================= */
 
 .menu-toggle {
-
     display: none;
-
-    width: 42px;
-
-    height: 42px;
-
-    border: 1px solid var(--border);
-
-    background: var(--white);
-
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: var(--radius);
     color: var(--primary);
-
-    border-radius: var(--radius-sm);
-
-    font-size: 18px;
-
+    background: var(--primary-light);
+    font-size: 1.2rem;
 }
 
-
 /* =========================================================
-   9. HERO
-========================================================= */
+   7. HERO
+   ========================================================= */
 
 .hero {
-
     position: relative;
-
-    min-height: 550px;
-
+    min-height: 520px;
     display: flex;
-
     align-items: center;
-
     overflow: hidden;
-
     background:
         linear-gradient(
-            120deg,
+            135deg,
+            rgba(8, 70, 45, 0.98),
+            rgba(11, 93, 59, 0.90)
+        );
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        url("../assets/img/logo-educacao.png");
+    background-repeat: no-repeat;
+    background-position: right 10% center;
+    background-size: 480px;
+    opacity: 0.04;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    padding: 80px 0;
+    color: var(--white);
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 7px 14px;
+    color: var(--secondary);
+    border: 1px solid rgba(212, 167, 44, 0.5);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.06);
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 5vw, 4.2rem);
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--secondary);
+}
+
+.hero p {
+    max-width: 680px;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 1.05rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* =========================================================
+   8. BOTÕES
+   ========================================================= */
+
+.btn {
+    min-height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 11px 22px;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    color: var(--white);
+    background: var(--primary);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    color: var(--white);
+    background: var(--secondary-dark);
+}
+
+.btn-outline {
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.5);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    color: var(--primary-dark);
+    background: var(--white);
+}
+
+.btn-danger {
+    color: var(--white);
+    background: var(--danger);
+}
+
+.btn-success {
+    color: var(--white);
+    background: var(--success);
+}
+
+.btn-sm {
+    min-height: 38px;
+    padding: 8px 14px;
+    font-size: 0.82rem;
+}
+
+/* =========================================================
+   9. AVISO
+   ========================================================= */
+
+.notice {
+    padding: 20px 0;
+    background: #fff9e6;
+    border-bottom: 1px solid #f1df9b;
+}
+
+.notice-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.notice-icon {
+    color: var(--warning);
+    font-size: 1.4rem;
+}
+
+.notice strong {
+    color: var(--gray-800);
+}
+
+.notice p {
+    margin-top: 3px;
+    color: var(--gray-600);
+    font-size: 0.9rem;
+}
+
+/* =========================================================
+   10. SEÇÕES
+   ========================================================= */
+
+section {
+    scroll-margin-top: 100px;
+}
+
+.quick-access,
+.registration-section,
+.content-section {
+    padding: 80px 0;
+}
+
+.section-header {
+    max-width: 700px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.section-tag {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--primary);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.section-header h2 {
+    margin-bottom: 12px;
+    color: var(--gray-800);
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+    line-height: 1.2;
+}
+
+.section-header p {
+    color: var(--gray-600);
+}
+
+/* =========================================================
+   11. CARDS
+   ========================================================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    padding: 30px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.card-icon {
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--primary);
+    background: var(--primary-light);
+    border-radius: var(--radius);
+    font-size: 1.3rem;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: var(--gray-800);
+}
+
+.card p {
+    margin-bottom: 20px;
+    color: var(--gray-600);
+    font-size: 0.9rem;
+}
+
+.card a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary);
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+/* =========================================================
+   12. CABEÇALHO INTERNO DAS PÁGINAS
+   ========================================================= */
+
+.page-header {
+    padding: 60px 0;
+    color: var(--white);
+    background:
+        linear-gradient(
+            135deg,
             var(--primary-dark),
             var(--primary)
         );
-
-    color: var(--white);
-
 }
-
-
-.hero::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle at 80% 30%,
-            rgba(212, 160, 23, 0.15),
-            transparent 35%
-        );
-
-    pointer-events: none;
-
-}
-
-
-/* =========================================================
-   10. MARCA-D'ÁGUA DO HERO
-========================================================= */
-
-.hero-watermark {
-
-    position: absolute;
-
-    right: 3%;
-
-    top: 50%;
-
-    transform:
-        translateY(-50%);
-
-    width: 430px;
-
-    opacity: 0.055;
-
-    pointer-events: none;
-
-    user-select: none;
-
-}
-
-
-.hero-watermark img {
-
-    width: 100%;
-
-    height: auto;
-
-}
-
-
-.hero-content {
-
-    position: relative;
-
-    z-index: 2;
-
-    padding-top: 70px;
-
-    padding-bottom: 70px;
-
-    max-width: 850px;
-
-}
-
-
-.hero-badge {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    padding: 7px 12px;
-
-    margin-bottom: 22px;
-
-    border:
-        1px solid rgba(255, 255, 255, 0.2);
-
-    background:
-        rgba(255, 255, 255, 0.08);
-
-    border-radius: 30px;
-
-    color:
-        rgba(255, 255, 255, 0.9);
-
-    font-size: 12px;
-
-    font-weight: 600;
-
-}
-
-
-.hero-badge i {
-
-    color: var(--secondary-light);
-
-}
-
-
-.hero h1 {
-
-    max-width: 720px;
-
-    font-size:
-        clamp(38px, 5vw, 64px);
-
-    line-height: 1.08;
-
-    font-weight: 800;
-
-    letter-spacing: -1.8px;
-
-    margin-bottom: 20px;
-
-}
-
-
-.hero h1 span {
-
-    display: block;
-
-    color: var(--secondary-light);
-
-}
-
-
-.hero p {
-
-    max-width: 650px;
-
-    color:
-        rgba(255, 255, 255, 0.78);
-
-    font-size: 17px;
-
-    line-height: 1.7;
-
-    margin-bottom: 30px;
-
-}
-
-
-/* =========================================================
-   11. BOTÕES
-========================================================= */
-
-.hero-actions {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 12px;
-
-}
-
-
-.btn {
-
-    min-height: 48px;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 9px;
-
-    padding: 12px 20px;
-
-    border-radius: var(--radius-sm);
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    transition:
-        var(--transition);
-
-}
-
-
-.btn-primary {
-
-    background: var(--secondary);
-
-    color: var(--primary-dark);
-
-}
-
-
-.btn-primary:hover {
-
-    background: var(--secondary-light);
-
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        var(--shadow);
-
-}
-
-
-.btn-secondary {
-
-    color: var(--white);
-
-    border:
-        1px solid rgba(255, 255, 255, 0.35);
-
-    background:
-        rgba(255, 255, 255, 0.08);
-
-}
-
-
-.btn-secondary:hover {
-
-    background:
-        rgba(255, 255, 255, 0.15);
-
-    transform:
-        translateY(-2px);
-
-}
-
-
-/* =========================================================
-   12. LINK DE CONSULTA
-========================================================= */
-
-.hero-consult {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    margin-top: 24px;
-
-    font-size: 13px;
-
-    color:
-        rgba(255, 255, 255, 0.7);
-
-}
-
-
-.hero-consult a {
-
-    color:
-        var(--secondary-light);
-
-    font-weight: 700;
-
-}
-
-
-.hero-consult a:hover {
-
-    text-decoration: underline;
-
-}
-
-
-/* =========================================================
-   13. AVISO / NOTICE
-========================================================= */
-
-.notice-section {
-
-    padding: 30px 0;
-
-    background:
-        var(--white);
-
-}
-
-
-.notice-card {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 18px;
-
-    padding: 20px 24px;
-
-    border:
-        1px solid #eadcae;
-
-    background:
-        #fffdf3;
-
-    border-radius:
-        var(--radius);
-
-}
-
-
-.notice-icon {
-
-    width: 46px;
-
-    height: 46px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background:
-        rgba(212, 160, 23, 0.15);
-
-    color:
-        var(--secondary-dark);
-
-    font-size: 20px;
-
-}
-
-
-.notice-content {
-
-    flex: 1;
-
-}
-
-
-.notice-content h3 {
-
-    color: var(--text);
-
-    font-size: 15px;
-
-    margin-bottom: 3px;
-
-}
-
-
-.notice-content p {
-
-    color: var(--text-light);
-
-    font-size: 13px;
-
-}
-
-
-.notice-link {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 7px;
-
-    color: var(--primary);
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    white-space: nowrap;
-
-}
-
-
-/* =========================================================
-   14. SECÇÕES
-========================================================= */
-
-.application-section,
-.information-section {
-
-    padding:
-        85px 0;
-
-}
-
-
-.application-section {
-
-    background:
-        var(--background);
-
-}
-
-
-.information-section {
-
-    background:
-        var(--white);
-
-}
-
-
-.section-heading {
-
-    max-width: 700px;
-
-    margin:
-        0 auto 45px;
-
-    text-align: center;
-
-}
-
-
-.section-label {
-
-    display: inline-block;
-
-    margin-bottom: 10px;
-
-    color:
-        var(--secondary-dark);
-
-    font-size: 11px;
-
-    font-weight: 800;
-
-    letter-spacing: 1.5px;
-
-}
-
-
-.section-heading h2 {
-
-    color: var(--primary);
-
-    font-size:
-        clamp(28px, 4vw, 38px);
-
-    line-height: 1.2;
-
-    margin-bottom: 12px;
-
-}
-
-
-.section-heading p {
-
-    color: var(--text-light);
-
-    font-size: 15px;
-
-}
-
-
-/* =========================================================
-   15. CARTÕES DE CANDIDATURA
-========================================================= */
-
-.application-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 22px;
-
-}
-
-
-.application-card {
-
-    position: relative;
-
-    display: flex;
-
-    flex-direction: column;
-
-    padding: 30px;
-
-    background:
-        var(--primary);
-
-    color: var(--white);
-
-    border-radius:
-        var(--radius-lg);
-
-    overflow: hidden;
-
-    transition:
-        var(--transition);
-
-}
-
-
-.application-card:hover {
-
-    transform:
-        translateY(-6px);
-
-    box-shadow:
-        var(--shadow-lg);
-
-}
-
-
-.application-card-light {
-
-    background:
-        var(--white);
-
-    color: var(--text);
-
-    border:
-        1px solid var(--border);
-
-}
-
-
-.application-card-header {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    margin-bottom: 25px;
-
-}
-
-
-.application-icon {
-
-    width: 52px;
-
-    height: 52px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background:
-        rgba(255, 255, 255, 0.1);
-
-    color:
-        var(--secondary-light);
-
-    border-radius:
-        var(--radius);
-
-    font-size: 22px;
-
-}
-
-
-.application-card-light
-.application-icon {
-
-    background:
-        rgba(11, 61, 46, 0.08);
-
-    color:
-        var(--primary);
-
-}
-
-
-.card-number {
-
-    font-size: 12px;
-
-    font-weight: 800;
-
-    opacity: 0.4;
-
-}
-
-
-.application-card h3 {
-
-    font-size: 22px;
-
-    margin-bottom: 12px;
-
-}
-
-
-.application-card p {
-
-    min-height: 78px;
-
-    color:
-        rgba(255, 255, 255, 0.72);
-
-    font-size: 14px;
-
-}
-
-
-.application-card-light p {
-
-    color:
-        var(--text-light);
-
-}
-
-
-.application-card ul {
-
-    margin:
-        20px 0 25px;
-
-}
-
-
-.application-card li {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 9px;
-
-    margin-bottom: 9px;
-
-    font-size: 13px;
-
-}
-
-
-.application-card li i {
-
-    color:
-        var(--secondary-light);
-
-    font-size: 11px;
-
-}
-
-
-.card-button {
-
-    margin-top: auto;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    padding-top: 18px;
-
-    border-top:
-        1px solid rgba(255, 255, 255, 0.12);
-
-    color:
-        var(--secondary-light);
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-}
-
-
-.application-card-light
-.card-button {
-
-    border-top:
-        1px solid var(--border);
-
-    color:
-        var(--primary);
-
-}
-
-
-/* =========================================================
-   16. INFORMAÇÕES RÁPIDAS
-========================================================= */
-
-.information-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 16px;
-
-}
-
-
-.information-item {
-
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 15px;
-
-    padding: 22px;
-
-    border:
-        1px solid var(--border);
-
-    border-radius:
-        var(--radius);
-
-    background:
-        var(--white);
-
-    transition:
-        var(--transition);
-
-}
-
-
-.information-item:hover {
-
-    border-color:
-        rgba(11, 61, 46, 0.25);
-
-    box-shadow:
-        var(--shadow-sm);
-
-    transform:
-        translateY(-3px);
-
-}
-
-
-.information-item > i {
-
-    width: 42px;
-
-    height: 42px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background:
-        rgba(11, 61, 46, 0.08);
-
-    color:
-        var(--primary);
-
-    border-radius:
-        var(--radius-sm);
-
-}
-
-
-.information-item h3 {
-
-    color:
-        var(--primary);
-
-    font-size: 14px;
-
-    margin-bottom: 4px;
-
-}
-
-
-.information-item p {
-
-    color:
-        var(--text-light);
-
-    font-size: 12px;
-
-    line-height: 1.5;
-
-}
-
-
-/* =========================================================
-   17. FORMULÁRIOS
-========================================================= */
-
-.form-section {
-
-    padding:
-        60px 0 90px;
-
-}
-
-
-.form-container {
-
-    max-width: 900px;
-
-    margin:
-        0 auto;
-
-}
-
-
-.form-card {
-
-    padding: 35px;
-
-    background:
-        var(--white);
-
-    border:
-        1px solid var(--border);
-
-    border-radius:
-        var(--radius-lg);
-
-    box-shadow:
-        var(--shadow-sm);
-
-}
-
-
-.form-section-title {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    margin:
-        30px 0 20px;
-
-    padding-bottom: 12px;
-
-    border-bottom:
-        1px solid var(--border);
-
-}
-
-
-.form-section-title:first-child {
-
-    margin-top: 0;
-
-}
-
-
-.form-section-title i {
-
-    color:
-        var(--primary);
-
-}
-
-
-.form-section-title h3 {
-
-    color:
-        var(--primary);
-
-    font-size: 18px;
-
-}
-
-
-.form-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 18px;
-
-}
-
-
-.form-group {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 7px;
-
-}
-
-
-.form-group.full {
-
-    grid-column:
-        1 / -1;
-
-}
-
-
-.form-group label {
-
-    color:
-        var(--text);
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-}
-
-
-.form-group label span {
-
-    color:
-        var(--danger);
-
-}
-
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-
-    width: 100%;
-
-    min-height: 46px;
-
-    padding:
-        11px 13px;
-
-    border:
-        1px solid var(--border-dark);
-
-    border-radius:
-        var(--radius-sm);
-
-    background:
-        var(--white);
-
-    color:
-        var(--text);
-
-    font-size: 13px;
-
-    outline: none;
-
-    transition:
-        var(--transition);
-
-}
-
-
-.form-group textarea {
-
-    min-height: 120px;
-
-    resize: vertical;
-
-}
-
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-
-    border-color:
-        var(--primary);
-
-    box-shadow:
-        0 0 0 3px
-        rgba(11, 61, 46, 0.08);
-
-}
-
-
-.form-help {
-
-    color:
-        var(--text-light);
-
-    font-size: 11px;
-
-}
-
-
-/* =========================================================
-   18. UPLOAD DE DOCUMENTOS
-========================================================= */
-
-.file-upload {
-
-    position: relative;
-
-    padding: 20px;
-
-    border:
-        1px dashed var(--border-dark);
-
-    border-radius:
-        var(--radius);
-
-    background:
-        var(--surface-light);
-
-}
-
-
-.file-upload:hover {
-
-    border-color:
-        var(--primary);
-
-}
-
-
-.file-upload input[type="file"] {
-
-    width: 100%;
-
-    font-size: 12px;
-
-}
-
-
-.document-list {
-
-    display: grid;
-
-    gap: 12px;
-
-}
-
-
-.document-item {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 15px;
-
-    padding: 15px;
-
-    border:
-        1px solid var(--border);
-
-    border-radius:
-        var(--radius-sm);
-
-}
-
-
-.document-item-info {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-}
-
-
-.document-item-info i {
-
-    color:
-        var(--primary);
-
-}
-
-
-.document-item-info strong {
-
-    display: block;
-
-    font-size: 13px;
-
-}
-
-
-.document-item-info span {
-
-    display: block;
-
-    color:
-        var(--text-light);
-
-    font-size: 11px;
-
-}
-
-
-/* =========================================================
-   19. CHECKBOX E RADIO
-========================================================= */
-
-.checkbox-group {
-
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 10px;
-
-}
-
-
-.checkbox-group input {
-
-    margin-top: 4px;
-
-    accent-color:
-        var(--primary);
-
-}
-
-
-.checkbox-group label {
-
-    color:
-        var(--text-light);
-
-    font-size: 12px;
-
-}
-
-
-/* =========================================================
-   20. TABELAS
-========================================================= */
-
-.table-wrapper {
-
-    width: 100%;
-
-    overflow-x: auto;
-
-    border:
-        1px solid var(--border);
-
-    border-radius:
-        var(--radius);
-
-}
-
-
-table {
-
-    width: 100%;
-
-    border-collapse: collapse;
-
-    background:
-        var(--white);
-
-}
-
-
-th {
-
-    padding:
-        14px 16px;
-
-    background:
-        var(--primary);
-
-    color:
-        var(--white);
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    text-align: left;
-
-}
-
-
-td {
-
-    padding:
-        13px 16px;
-
-    border-bottom:
-        1px solid var(--border);
-
-    color:
-        var(--text);
-
-    font-size: 12px;
-
-}
-
-
-tr:last-child td {
-
-    border-bottom: none;
-
-}
-
-
-tr:hover td {
-
-    background:
-        var(--surface-light);
-
-}
-
-
-/* =========================================================
-   21. ALERTAS
-========================================================= */
-
-.alert {
-
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 12px;
-
-    padding: 15px 18px;
-
-    border-radius:
-        var(--radius-sm);
-
-    font-size: 13px;
-
-}
-
-
-.alert-success {
-
-    color:
-        #155724;
-
-    background:
-        #d4edda;
-
-    border:
-        1px solid #c3e6cb;
-
-}
-
-
-.alert-warning {
-
-    color:
-        #856404;
-
-    background:
-        #fff3cd;
-
-    border:
-        1px solid #ffeeba;
-
-}
-
-
-.alert-danger {
-
-    color:
-        #721c24;
-
-    background:
-        #f8d7da;
-
-    border:
-        1px solid #f5c6cb;
-
-}
-
-
-.alert-info {
-
-    color:
-        #0c5460;
-
-    background:
-        #d1ecf1;
-
-    border:
-        1px solid #bee5eb;
-
-}
-
-
-/* =========================================================
-   22. PÁGINA INTERNA / PAGE HEADER
-========================================================= */
-
-.page-header {
-
-    position: relative;
-
-    padding:
-        55px 0;
-
-    background:
-        var(--primary);
-
-    color:
-        var(--white);
-
-    overflow: hidden;
-
-}
-
-
-.page-header::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 300px;
-
-    height: 300px;
-
-    right: -100px;
-
-    top: -100px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(212, 160, 23, 0.1);
-
-}
-
-
-.page-header-content {
-
-    position: relative;
-
-    z-index: 2;
-
-}
-
 
 .page-header h1 {
-
-    font-size:
-        clamp(28px, 4vw, 42px);
-
-    line-height: 1.2;
-
-    margin-bottom: 10px;
-
+    margin: 8px 0;
+    font-size: clamp(1.8rem, 4vw, 3rem);
 }
-
 
 .page-header p {
-
     max-width: 700px;
-
-    color:
-        rgba(255, 255, 255, 0.72);
-
-    font-size: 14px;
-
+    color: rgba(255, 255, 255, 0.85);
 }
 
-
 /* =========================================================
-   23. BREADCRUMB
-========================================================= */
+   13. FORMULÁRIOS
+   ========================================================= */
 
-.breadcrumb {
+.form-container {
+    max-width: 950px;
+    margin: 0 auto;
+}
 
+.registration-form,
+.form-card {
+    padding: 35px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.form-section {
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.form-section:last-child {
+    border-bottom: 0;
+}
+
+.form-section-title {
     display: flex;
-
-    flex-wrap: wrap;
-
     align-items: center;
-
-    gap: 8px;
-
-    margin-top: 15px;
-
-    font-size: 12px;
-
-    color:
-        rgba(255, 255, 255, 0.65);
-
+    gap: 10px;
+    margin-bottom: 22px;
+    color: var(--primary-dark);
+    font-size: 1.1rem;
 }
 
-
-.breadcrumb a:hover {
-
-    color:
-        var(--secondary-light);
-
+.form-section-title span {
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    background: var(--primary);
+    border-radius: 50%;
+    font-size: 0.8rem;
 }
 
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.form-row.three {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group label {
+    color: var(--gray-700);
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+
+.form-group label span {
+    color: var(--danger);
+}
+
+.form-control {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 13px;
+    color: var(--gray-800);
+    background: var(--white);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius);
+    outline: none;
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(11, 93, 59, 0.1);
+}
+
+.form-control.error {
+    border-color: var(--danger);
+}
+
+textarea.form-control {
+    min-height: 110px;
+    resize: vertical;
+}
 
 /* =========================================================
-   24. RESULTADOS / CONSULTA
-========================================================= */
+   14. CHECKBOX E RADIO
+   ========================================================= */
+
+.checkbox-group,
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.checkbox-item,
+.radio-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 14px;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.checkbox-item:hover,
+.radio-item:hover {
+    border-color: var(--primary);
+    background: var(--primary-light);
+}
+
+.checkbox-item input,
+.radio-item input {
+    accent-color: var(--primary);
+}
+
+/* =========================================================
+   15. UPLOAD DE DOCUMENTOS
+   ========================================================= */
+
+.document-upload {
+    padding: 20px;
+    background: var(--gray-50);
+    border: 1px dashed var(--gray-300);
+    border-radius: var(--radius);
+}
+
+.document-upload + .document-upload {
+    margin-top: 12px;
+}
+
+.document-upload label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gray-700);
+    font-weight: 700;
+}
+
+.document-upload input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+}
+
+.file-info {
+    margin-top: 6px;
+    color: var(--gray-500);
+    font-size: 0.78rem;
+}
+
+/* =========================================================
+   16. BOTÕES DO FORMULÁRIO
+   ========================================================= */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+/* =========================================================
+   17. ALERTAS
+   ========================================================= */
+
+.alert {
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    border-radius: var(--radius);
+    font-size: 0.88rem;
+}
+
+.alert-success {
+    color: #0f5132;
+    background: #d1e7dd;
+    border: 1px solid #badbcc;
+}
+
+.alert-danger {
+    color: #842029;
+    background: #f8d7da;
+    border: 1px solid #f5c2c7;
+}
+
+.alert-warning {
+    color: #664d03;
+    background: #fff3cd;
+    border: 1px solid #ffecb5;
+}
+
+.alert-info {
+    color: #055160;
+    background: #cff4fc;
+    border: 1px solid #b6effb;
+}
+
+/* =========================================================
+   18. CONSULTA
+   ========================================================= */
 
 .search-box {
+    max-width: 700px;
+    margin: 0 auto;
+}
 
-    max-width: 650px;
-
-    margin:
-        0 auto;
-
+.search-form {
     display: flex;
-
     gap: 10px;
-
 }
 
-
-.search-box input {
-
+.search-form .form-control {
     flex: 1;
-
-    min-height: 50px;
-
-    padding:
-        12px 16px;
-
-    border:
-        1px solid var(--border-dark);
-
-    border-radius:
-        var(--radius-sm);
-
-    outline: none;
-
 }
 
-
-.search-box input:focus {
-
-    border-color:
-        var(--primary);
-
+.candidate-result {
+    margin-top: 30px;
+    padding: 25px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
 }
 
-
-.search-box button {
-
-    min-width: 130px;
-
-    border: none;
-
-    border-radius:
-        var(--radius-sm);
-
-    background:
-        var(--primary);
-
-    color:
-        var(--white);
-
-    font-weight: 700;
-
-}
-
-
-/* =========================================================
-   25. BADGES / ESTADOS
-========================================================= */
-
-.status-badge {
-
+.status {
     display: inline-flex;
-
     align-items: center;
-
-    padding:
-        5px 10px;
-
-    border-radius:
-        30px;
-
-    font-size: 11px;
-
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.78rem;
     font-weight: 700;
-
 }
-
 
 .status-pending {
-
-    color:
-        #856404;
-
-    background:
-        #fff3cd;
-
+    color: #664d03;
+    background: #fff3cd;
 }
-
 
 .status-approved {
-
-    color:
-        #155724;
-
-    background:
-        #d4edda;
-
+    color: #0f5132;
+    background: #d1e7dd;
 }
-
 
 .status-rejected {
-
-    color:
-        #721c24;
-
-    background:
-        #f8d7da;
-
+    color: #842029;
+    background: #f8d7da;
 }
-
 
 /* =========================================================
-   26. RODAPÉ
-========================================================= */
+   19. TABELAS
+   ========================================================= */
 
-.footer {
-
-    background:
-        var(--primary-dark);
-
-    color:
-        rgba(255, 255, 255, 0.75);
-
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
 
-.footer-grid {
+th,
+td {
+    padding: 13px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--gray-200);
+}
 
+th {
+    color: var(--gray-700);
+    background: var(--gray-100);
+    font-size: 0.8rem;
+}
+
+td {
+    color: var(--gray-600);
+    font-size: 0.85rem;
+}
+
+/* =========================================================
+   20. RODAPÉ
+   ========================================================= */
+
+.site-footer,
+footer {
+    color: rgba(255, 255, 255, 0.8);
+    background: var(--gray-800);
+}
+
+.footer-content {
     display: grid;
-
-    grid-template-columns:
-        2fr 1fr 1fr;
-
-    gap: 50px;
-
-    padding:
-        60px 24px;
-
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    padding: 50px 0;
 }
 
-
-.footer-brand img {
-
-    width: 55px;
-
-    margin-bottom: 18px;
-
+.footer-content strong {
+    color: var(--white);
 }
 
-
-.footer h3 {
-
-    color:
-        var(--white);
-
-    font-size: 16px;
-
-    margin-bottom: 10px;
-
+.footer-content p {
+    margin-top: 8px;
+    font-size: 0.85rem;
 }
-
-
-.footer h4 {
-
-    color:
-        var(--white);
-
-    font-size: 14px;
-
-    margin-bottom: 15px;
-
-}
-
-
-.footer p {
-
-    max-width: 400px;
-
-    font-size: 12px;
-
-    line-height: 1.7;
-
-}
-
-
-.footer-links {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 8px;
-
-}
-
-
-.footer-links a {
-
-    font-size: 12px;
-
-    transition:
-        var(--transition);
-
-}
-
-
-.footer-links a:hover {
-
-    color:
-        var(--secondary-light);
-
-    padding-left: 3px;
-
-}
-
-
-.footer-contact p {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    margin-bottom: 10px;
-
-}
-
-
-.footer-contact i {
-
-    color:
-        var(--secondary);
-
-}
-
 
 .footer-bottom {
-
-    border-top:
-        1px solid rgba(255, 255, 255, 0.08);
-
+    padding: 18px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.55);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.78rem;
 }
-
-
-.footer-bottom .container {
-
-    min-height: 55px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 20px;
-
-    font-size: 11px;
-
-}
-
 
 /* =========================================================
-   27. LOADING
-========================================================= */
+   21. LOADING
+   ========================================================= */
 
 .loading {
-
-    display: flex;
-
+    display: none;
     align-items: center;
-
     justify-content: center;
-
     gap: 10px;
-
-    padding: 30px;
-
-    color:
-        var(--text-light);
-
-    font-size: 13px;
-
+    padding: 20px;
 }
 
+.loading.active {
+    display: flex;
+}
 
 .spinner {
-
-    width: 22px;
-
-    height: 22px;
-
-    border:
-        3px solid var(--border);
-
-    border-top-color:
-        var(--primary);
-
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--gray-200);
+    border-top-color: var(--primary);
     border-radius: 50%;
-
-    animation:
-        spin 0.8s linear infinite;
-
+    animation: spin 0.8s linear infinite;
 }
-
 
 @keyframes spin {
-
     to {
+        transform: rotate(360deg);
+    }
+}
 
-        transform:
-            rotate(360deg);
+/* =========================================================
+   22. MODAL
+   ========================================================= */
 
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    width: min(100%, 600px);
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 30px;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+}
+
+/* =========================================================
+   23. RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        gap: 0;
     }
 
+    .nav-link {
+        padding-inline: 9px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
+@media (max-width: 900px) {
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 15px;
+        background: var(--white);
+        border-top: 1px solid var(--gray-200);
+        box-shadow: var(--shadow);
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .nav-link,
+    .nav-button {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+
+    .form-row.three {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .top-bar-content,
+    .institution-info,
+    .contact-info {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .contact-info {
+        display: none;
+    }
+
+    .header-content {
+        min-height: 70px;
+    }
+
+    .brand-text span {
+        display: none;
+    }
+
+    .brand-text strong {
+        font-size: 0.72rem;
+    }
+
+    .logo {
+        width: 45px;
+        height: 45px;
+    }
+
+    .hero {
+        min-height: 480px;
+    }
+
+    .hero-content {
+        padding: 60px 0;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row,
+    .form-row.three {
+        grid-template-columns: 1fr;
+    }
+
+    .registration-form,
+    .form-card {
+        padding: 22px;
+    }
+
+    .search-form {
+        flex-direction: column;
+    }
+
+    .search-form .btn {
+        width: 100%;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    html {
+        font-size: 15px;
+    }
+
+    .container {
+        width: 94%;
+    }
+
+    .quick-access,
+    .registration-section,
+    .content-section {
+        padding: 55px 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 0.92rem;
+    }
+
+    .page-header {
+        padding: 45px 0;
+    }
+
+    .checkbox-group,
+    .radio-group {
+        flex-direction: column;
+    }
+
+    .checkbox-item,
+    .radio-item {
+        width: 100%;
+    }
+}
 
 /* =========================================================
-   28. BOTÃO VOLTAR AO TOPO
-========================================================= */
+   24. IMPRESSÃO
+   ========================================================= */
 
-.back-to-top {
+@media print {
 
-    position: fixed;
+    .top-bar,
+    .main-header,
+    .site-footer,
+    footer,
+    .btn,
+    .form-actions,
+    .menu-toggle {
+        display: none !important;
+    }
 
-    right: 22px;
+    body {
+        background: white;
+    }
 
-    bottom: 22px;
+    .container {
+        width: 100%;
+    }
 
-    width: 42px;
-
-    height: 42px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background:
-        var(--primary);
-
-    color:
-        var(--white);
-
-    box-shadow:
-        var(--shadow);
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transform:
-        translateY(10px);
-
-    transition:
-        var(--transition);
-
-    z-index: 900;
-
-}
-
-
-.back-to-top.show {
-
-    opacity: 1;
-
-    visibility: visible;
-
-    transform:
-        translateY(0);
-
-}
-
-
-/* =========================================================
-   29. SELECÇÃO DE TEXTO
-========================================================= */
-
-::selection {
-
-    background:
-        var(--secondary);
-
-    color:
-        var(--primary-dark);
-
-}
-
-
-/* =========================================================
-   30. SCROLLBAR
-========================================================= */
-
-::-webkit-scrollbar {
-
-    width: 8px;
-
-}
-
-
-::-webkit-scrollbar-track {
-
-    background:
-        #eef1ef;
-
-}
-
-
-::-webkit-scrollbar-thumb {
-
-    background:
-        var(--primary);
-
-    border-radius:
-        10px;
-
-}
-
-
-::-webkit-scrollbar-thumb:hover {
-
-    background:
-        var(--primary-light);
-
+    .registration-form,
+    .form-card,
+    .candidate-result {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
 }
