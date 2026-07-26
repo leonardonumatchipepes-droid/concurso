@@ -1,74 +1,94 @@
 <!DOCTYPE html>
+
 <html lang="pt-AO">
 
 <head>
 
-    <meta charset="UTF-8">
+```
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <meta
-        http-equiv="X-UA-Compatible"
-        content="IE=edge"
-    >
+<meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge"
+>
 
-    <meta
-        name="description"
-        content="Portal Oficial do Concurso Público de Ingresso Externo 2026 do Sector da Educação – Município de Menongue."
-    >
+<meta
+    name="description"
+    content="Portal Oficial do Concurso Público de Ingresso Externo 2026 do Sector da Educação do Município de Menongue."
+>
 
-    <meta
-        name="author"
-        content="Direcção Municipal da Educação de Menongue"
-    >
+<meta
+    name="author"
+    content="Direcção Municipal da Educação de Menongue"
+>
 
-    <title>
-        Concurso Público da Educação 2026 | Menongue
-    </title>
+<meta
+    name="theme-color"
+    content="#087443"
+>
 
-    <link
-        rel="icon"
-        type="image/png"
-        href="assets/img/favicon.png"
-    >
+<title>
+    Concurso Público da Educação 2026 | Menongue
+</title>
 
-    <!-- Google Fonts -->
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
+<!-- FAVICON -->
+<link
+    rel="icon"
+    type="image/png"
+    href="assets/img/favicon.png"
+>
 
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
+<!-- GOOGLE FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
 
-    <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
 
-    <!-- CSS GLOBAL -->
-    <link
-        rel="stylesheet"
-        href="assets/css/style.css"
-    >
+<!-- FONT AWESOME -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+<!-- CSS PRINCIPAL -->
+<link
+    rel="stylesheet"
+    href="assets/css/style.css"
+>
+```
 
 </head>
 
-
 <body>
 
+<!-- =====================================================
+     ACESSIBILIDADE
+===================================================== -->
+
+<a
+href="#conteudo-principal"
+class="skip-link"
+
+>
+
+```
+Ir directamente para o conteúdo
+```
+
+</a>
 
 <!-- =====================================================
      BARRA INSTITUCIONAL
@@ -76,7 +96,10 @@
 
 <div class="top-bar">
 
-    <div class="container top-bar-inner">
+```
+<div class="container top-bar-inner">
+
+    <div class="top-bar-left">
 
         <span>
             <i class="fa-solid fa-landmark"></i>
@@ -85,19 +108,28 @@
 
         <span>
             <i class="fa-solid fa-location-dot"></i>
-            Menongue · Cubango
+            Município de Menongue · Cubango
         </span>
 
+    </div>
+
+
+    <div class="top-bar-right">
+
         <span class="top-status">
+
             <i class="fa-solid fa-circle-check"></i>
+
             Portal Oficial · 2026
+
         </span>
 
     </div>
 
 </div>
+```
 
-
+</div>
 
 <!-- =====================================================
      CABEÇALHO PRINCIPAL
@@ -105,265 +137,252 @@
 
 <header class="main-header">
 
-    <div class="container header-inner">
+```
+<div class="container header-inner">
 
 
-        <!-- IDENTIDADE INSTITUCIONAL -->
+    <!-- MARCA INSTITUCIONAL -->
+
+    <a
+        href="index.html"
+        class="brand"
+        aria-label="Página inicial do Portal do Concurso Público da Educação de Menongue"
+    >
+
+        <div class="brand-logo">
+
+            <img
+                src="assets/img/logo-angola.png"
+                alt="Logótipo da República de Angola"
+            >
+
+        </div>
+
+
+        <div class="brand-text">
+
+            <span class="brand-country">
+                REPÚBLICA DE ANGOLA
+            </span>
+
+            <span>
+                Governo Provincial do Cubango
+            </span>
+
+            <span>
+                Administração Municipal de Menongue
+            </span>
+
+            <strong>
+                Direcção Municipal da Educação
+            </strong>
+
+        </div>
+
+    </a>
+
+
+    <!-- BOTÃO MENU MOBILE -->
+
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Abrir menu de navegação"
+        aria-expanded="false"
+        aria-controls="navbar"
+    >
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+
+    <!-- NAVEGAÇÃO -->
+
+    <nav
+        class="navbar"
+        id="navbar"
+        aria-label="Navegação principal"
+    >
 
         <a
             href="index.html"
-            class="brand"
-            aria-label="Página inicial"
+            class="nav-link active"
+            aria-current="page"
         >
-
-            <!-- ÚNICO LOGÓTIPO -->
-
-            <div class="brand-logo">
-
-                <img
-                    src="assets/img/logo-angola.png"
-                    alt="República de Angola"
-                >
-
-            </div>
-
-
-            <!-- TEXTO INSTITUCIONAL -->
-
-            <div class="brand-text">
-
-                <strong>
-                    REPÚBLICA DE ANGOLA
-                </strong>
-
-                <span>
-                    Governo Provincial do Cubango
-                </span>
-
-                <span>
-                    Administração Municipal de Menongue
-                </span>
-
-                <b>
-                    Direcção Municipal da Educação
-                </b>
-
-            </div>
-
+            <i class="fa-solid fa-house"></i>
+            Início
         </a>
 
-
-
-        <!-- MENU MOBILE -->
-
-        <button
-            class="menu-toggle"
-            id="menuToggle"
-            type="button"
-            aria-label="Abrir menu"
-            aria-expanded="false"
+        <a
+            href="requisitos.html"
+            class="nav-link"
         >
+            <i class="fa-solid fa-list-check"></i>
+            Requisitos
+        </a>
 
-            <i class="fa-solid fa-bars"></i>
-
-        </button>
-
-
-
-        <!-- NAVEGAÇÃO -->
-
-        <nav
-            class="navbar"
-            id="navbar"
+        <a
+            href="edital.html"
+            class="nav-link"
         >
+            <i class="fa-solid fa-file-lines"></i>
+            Edital
+        </a>
 
-            <a
-                href="index.html"
-                class="nav-link active"
-            >
-                Início
-            </a>
+        <a
+            href="cronograma.html"
+            class="nav-link"
+        >
+            <i class="fa-solid fa-calendar-days"></i>
+            Cronograma
+        </a>
 
-            <a
-                href="requisitos.html"
-                class="nav-link"
-            >
-                Requisitos
-            </a>
+        <a
+            href="consultar.html"
+            class="nav-link"
+        >
+            <i class="fa-solid fa-magnifying-glass"></i>
+            Consultar
+        </a>
 
-            <a
-                href="edital.html"
-                class="nav-link"
-            >
-                Edital
-            </a>
+        <a
+            href="contactos.html"
+            class="nav-link"
+        >
+            <i class="fa-solid fa-phone"></i>
+            Contactos
+        </a>
 
-            <a
-                href="cronograma.html"
-                class="nav-link"
-            >
-                Cronograma
-            </a>
+    </nav>
 
-            <a
-                href="consultar.html"
-                class="nav-link"
-            >
-                Consultar
-            </a>
-
-            <a
-                href="contactos.html"
-                class="nav-link"
-            >
-                Contactos
-            </a>
-
-        </nav>
-
-    </div>
+</div>
+```
 
 </header>
 
-
-
 <!-- =====================================================
-     HERO PRINCIPAL
+     CONTEÚDO PRINCIPAL
 ===================================================== -->
 
-<main>
+<main id="conteudo-principal">
 
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero">
 
+```
+<!-- MARCA DE ÁGUA -->
+<div
+    class="hero-watermark"
+    aria-hidden="true"
+>
 
-    <!-- MARCA DE ÁGUA -->
-
-    <div
-        class="hero-watermark"
-        aria-hidden="true"
+    <img
+        src="assets/img/logo-educa.png"
+        alt=""
     >
 
-        <img
-            src="assets/img/logo.png"
-            alt=""
-        >
-
-    </div>
+</div>
 
 
+<div class="container hero-inner">
 
-    <div class="container hero-inner">
-
-
-        <div class="hero-content">
+    <div class="hero-content">
 
 
-            <!-- ETIQUETA -->
+        <span class="hero-badge">
 
-            <span class="hero-badge">
+            <i class="fa-solid fa-bullhorn"></i>
 
-                <i class="fa-solid fa-bullhorn"></i>
+            Concurso Público · Ingresso Externo · 2026
 
-                Concurso Público · 2026
+        </span>
 
+
+        <h1>
+
+            Concurso Público de
+
+            <span>
+                Ingresso Externo
             </span>
 
+        </h1>
 
 
-            <!-- TÍTULO -->
+        <p class="hero-lead">
 
-            <h1>
+            Sector da Educação · Município de Menongue
 
-                Concurso Público de
-                <span>
-                    Ingresso Externo
-                </span>
-
-            </h1>
+        </p>
 
 
+        <p class="hero-description">
 
-            <!-- SUBTÍTULO -->
+            Consulte as informações oficiais, conheça os requisitos
+            e efectue a sua candidatura de forma simples, segura,
+            transparente e responsável.
 
-            <p class="hero-lead">
-
-                Sector da Educação · Município de Menongue
-
-            </p>
-
+        </p>
 
 
-            <p class="hero-description">
-
-                Consulte as informações oficiais e efectue a sua
-                candidatura de forma simples, segura e transparente.
-
-            </p>
+        <div class="hero-actions">
 
 
+            <a
+                href="inscricao-professores.html"
+                class="btn btn-primary btn-lg"
+            >
 
-            <!-- BOTÕES PRINCIPAIS -->
+                <i class="fa-solid fa-chalkboard-user"></i>
 
-            <div class="hero-actions">
+                Candidatura de Professores
 
-
-                <a
-                    href="inscricao-professores.html"
-                    class="btn btn-primary"
-                >
-
-                    <i class="fa-solid fa-graduation-cap"></i>
-
-                    Candidatura de Professores
-
-                </a>
+            </a>
 
 
+            <a
+                href="inscricao-regime-geral.html"
+                class="btn btn-outline btn-lg"
+            >
 
-                <a
-                    href="inscricao-regime-geral.html"
-                    class="btn btn-outline"
-                >
+                <i class="fa-solid fa-user-tie"></i>
 
-                    <i class="fa-solid fa-user-tie"></i>
+                Regime Geral
 
-                    Regime Geral
-
-                </a>
-
-
-            </div>
+            </a>
 
 
+        </div>
 
-            <!-- CONSULTA -->
 
-            <div class="hero-consult">
+        <div class="hero-consult">
 
-                <span>
-                    Já realizou a sua candidatura?
-                </span>
+            <span>
+                Já realizou a sua candidatura?
+            </span>
 
-                <a href="consultar.html">
+            <a href="consultar.html">
 
-                    Consultar candidatura
+                Consultar candidatura
 
-                    <i class="fa-solid fa-arrow-right"></i>
+                <i class="fa-solid fa-arrow-right"></i>
 
-                </a>
-
-            </div>
-
+            </a>
 
         </div>
 
 
     </div>
 
+</div>
+```
+
 </section>
-
-
 
 <!-- =====================================================
      AVISO OFICIAL
@@ -371,477 +390,427 @@
 
 <section class="notice-section">
 
-    <div class="container">
+```
+<div class="container">
+
+    <div class="notice-card">
 
 
-        <div class="notice-card">
+        <div class="notice-icon">
 
-
-            <div class="notice-icon">
-
-                <i class="fa-solid fa-circle-info"></i>
-
-            </div>
-
-
-
-            <div class="notice-text">
-
-                <span>
-                    INFORMAÇÃO AO CANDIDATO
-                </span>
-
-                <h3>
-                    Prepare a sua candidatura antes de começar
-                </h3>
-
-                <p>
-
-                    Antes de preencher o formulário, consulte os
-                    requisitos, os documentos necessários e o
-                    cronograma oficial do concurso.
-
-                </p>
-
-            </div>
-
-
-
-            <a
-                href="requisitos.html"
-                class="notice-button"
-            >
-
-                Ver requisitos
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
-
+            <i class="fa-solid fa-circle-info"></i>
 
         </div>
 
 
+        <div class="notice-text">
+
+            <span class="notice-label">
+                INFORMAÇÃO AO CANDIDATO
+            </span>
+
+            <h2>
+                Prepare a sua candidatura antes de começar
+            </h2>
+
+            <p>
+
+                Antes de preencher o formulário de candidatura,
+                consulte atentamente os requisitos, os documentos
+                necessários e o cronograma oficial do concurso.
+
+            </p>
+
+        </div>
+
+
+        <a
+            href="requisitos.html"
+            class="notice-button"
+        >
+
+            Ver requisitos
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+
     </div>
 
+</div>
+```
+
 </section>
-
-
 
 <!-- =====================================================
      ÁREA DE CANDIDATURA
 ===================================================== -->
 
-<section class="application-section">
+<section class="application-section section">
+
+```
+<div class="container">
 
 
-    <div class="container">
+    <div class="section-heading">
+
+        <span class="section-label">
+            CANDIDATURAS 2026
+        </span>
+
+        <h2>
+            Como pretende candidatar-se?
+        </h2>
+
+        <p>
+            Seleccione a modalidade correspondente ao seu perfil
+            para iniciar o processo de candidatura.
+        </p>
+
+    </div>
 
 
-        <div class="section-heading">
+    <div class="application-grid">
 
 
-            <span class="section-label">
-                CANDIDATURAS 2026
-            </span>
+        <!-- PROFESSORES -->
+
+        <article class="application-card featured">
+
+            <div class="card-top">
+
+                <div class="application-icon">
+
+                    <i class="fa-solid fa-chalkboard-user"></i>
+
+                </div>
+
+                <span class="card-tag">
+                    CARREIRA ESPECIAL
+                </span>
+
+            </div>
 
 
-            <h2>
-                Como pretende candidatar-se?
-            </h2>
+            <h3>
+                Professores
+            </h3>
 
 
             <p>
 
-                Escolha uma das opções abaixo para iniciar
-                o processo de candidatura.
+                Destinado aos candidatos ao ingresso na carreira
+                especial dos agentes da educação, de acordo com
+                as categorias, especialidades e vagas disponíveis.
 
             </p>
 
 
-        </div>
+            <ul class="card-list">
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Ensino Primário
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Ensino Secundário
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Candidatura por especialidade
+                </li>
+
+            </ul>
 
 
+            <a
+                href="inscricao-professores.html"
+                class="card-button"
+            >
 
-        <div class="application-grid">
+                Iniciar candidatura
 
+                <i class="fa-solid fa-arrow-right"></i>
 
-            <!-- =========================================
-                 PROFESSORES
-            ========================================== -->
+            </a>
 
-            <article class="application-card featured">
-
-
-                <div class="card-top">
-
-                    <div class="application-icon">
-
-                        <i class="fa-solid fa-chalkboard-user"></i>
-
-                    </div>
-
-                    <span class="card-tag">
-                        CARREIRA ESPECIAL
-                    </span>
-
-                </div>
+        </article>
 
 
+        <!-- REGIME GERAL -->
 
-                <h3>
-                    Professores
-                </h3>
+        <article class="application-card">
 
+            <div class="card-top">
 
+                <div class="application-icon">
 
-                <p>
-
-                    Para candidatos ao ingresso na carreira
-                    especial dos agentes da educação, de acordo
-                    com a categoria e especialidade disponíveis.
-
-                </p>
-
-
-
-                <ul>
-
-                    <li>
-                        <i class="fa-solid fa-check"></i>
-                        Ensino Primário
-                    </li>
-
-                    <li>
-                        <i class="fa-solid fa-check"></i>
-                        Ensino Secundário
-                    </li>
-
-                    <li>
-                        <i class="fa-solid fa-check"></i>
-                        Candidatura por especialidade
-                    </li>
-
-                </ul>
-
-
-
-                <a
-                    href="inscricao-professores.html"
-                    class="card-button"
-                >
-
-                    Iniciar candidatura
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </a>
-
-
-            </article>
-
-
-
-            <!-- =========================================
-                 REGIME GERAL
-            ========================================== -->
-
-            <article class="application-card">
-
-
-                <div class="card-top">
-
-                    <div class="application-icon">
-
-                        <i class="fa-solid fa-user-tie"></i>
-
-                    </div>
-
-                    <span class="card-tag">
-                        CARREIRA GERAL
-                    </span>
+                    <i class="fa-solid fa-user-tie"></i>
 
                 </div>
 
+                <span class="card-tag">
+                    CARREIRA GERAL
+                </span>
+
+            </div>
 
 
-                <h3>
-                    Regime Geral
-                </h3>
+            <h3>
+                Regime Geral
+            </h3>
 
 
+            <p>
 
-                <p>
+                Destinado aos candidatos ao ingresso no pessoal
+                administrativo e técnico do Sector da Educação,
+                conforme as vagas e requisitos definidos.
 
-                    Para candidatos ao ingresso no pessoal
-                    administrativo do Sector da Educação,
-                    conforme as vagas e requisitos definidos.
-
-                </p>
-
+            </p>
 
 
-                <ul>
+            <ul class="card-list">
 
-                    <li>
-                        <i class="fa-solid fa-check"></i>
-                        Técnico de Informática
-                    </li>
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Técnico de Informática
+                </li>
 
-                    <li>
-                        <i class="fa-solid fa-check"></i>
-                        Administração Pública
-                    </li>
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Administração Pública
+                </li>
 
-                    <li>
-                        <i class="fa-solid fa-check"></i>
-                        II Ciclo do Ensino Secundário
-                    </li>
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    II Ciclo do Ensino Secundário
+                </li>
 
-                </ul>
-
-
-
-                <a
-                    href="inscricao-regime-geral.html"
-                    class="card-button"
-                >
-
-                    Iniciar candidatura
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </a>
+            </ul>
 
 
-            </article>
+            <a
+                href="inscricao-regime-geral.html"
+                class="card-button"
+            >
+
+                Iniciar candidatura
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </article>
 
 
+        <!-- CONSULTA -->
 
-            <!-- =========================================
-                 CONSULTA
-            ========================================== -->
+        <article class="application-card consultation-card">
 
-            <article class="application-card consultation-card">
+            <div class="card-top">
 
+                <div class="application-icon">
 
-                <div class="card-top">
-
-                    <div class="application-icon">
-
-                        <i class="fa-solid fa-magnifying-glass"></i>
-
-                    </div>
-
-                    <span class="card-tag">
-                        ÁREA DO CANDIDATO
-                    </span>
+                    <i class="fa-solid fa-magnifying-glass"></i>
 
                 </div>
 
+                <span class="card-tag">
+                    ÁREA DO CANDIDATO
+                </span>
+
+            </div>
 
 
-                <h3>
-                    Consultar candidatura
-                </h3>
+            <h3>
+                Consultar candidatura
+            </h3>
 
 
+            <p>
 
-                <p>
+                Consulte o estado da sua candidatura,
+                acompanhe as actualizações e verifique
+                as informações e resultados publicados.
 
-                    Consulte o estado da sua candidatura,
-                    acompanhe as actualizações e verifique
-                    as informações publicadas.
-
-                </p>
-
+            </p>
 
 
-                <ul>
+            <ul class="card-list">
 
-                    <li>
-                        <i class="fa-solid fa-check"></i>
-                        Estado da candidatura
-                    </li>
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Estado da candidatura
+                </li>
 
-                    <li>
-                        <i class="fa-solid fa-check"></i>
-                        Número de inscrição
-                    </li>
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Número de inscrição
+                </li>
 
-                    <li>
-                        <i class="fa-solid fa-check"></i>
-                        Resultados publicados
-                    </li>
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Resultados publicados
+                </li>
 
-                </ul>
-
-
-
-                <a
-                    href="consultar.html"
-                    class="card-button"
-                >
-
-                    Consultar agora
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </a>
+            </ul>
 
 
-            </article>
+            <a
+                href="consultar.html"
+                class="card-button"
+            >
 
+                Consultar agora
 
-        </div>
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </article>
 
 
     </div>
 
+</div>
+```
+
 </section>
-
-
 
 <!-- =====================================================
      INFORMAÇÕES ÚTEIS
 ===================================================== -->
 
-<section class="information-section">
+<section class="information-section section">
+
+```
+<div class="container">
 
 
-    <div class="container">
+    <div class="section-heading">
+
+        <span class="section-label">
+            INFORMAÇÃO OFICIAL
+        </span>
+
+        <h2>
+            Tudo o que precisa saber
+        </h2>
+
+        <p>
+
+            Consulte as informações oficiais do concurso
+            antes de efectuar a sua candidatura.
+
+        </p>
+
+    </div>
 
 
-        <div class="section-heading">
+    <div class="information-grid">
 
 
-            <span class="section-label">
-                INFORMAÇÃO OFICIAL
-            </span>
+        <a
+            href="requisitos.html"
+            class="information-item"
+        >
+
+            <i class="fa-solid fa-list-check"></i>
+
+            <div>
+
+                <h3>
+                    Requisitos
+                </h3>
+
+                <p>
+                    Saiba quem pode candidatar-se.
+                </p>
+
+            </div>
+
+        </a>
 
 
-            <h2>
-                Tudo o que precisa saber
-            </h2>
+        <a
+            href="documentos.html"
+            class="information-item"
+        >
+
+            <i class="fa-solid fa-folder-open"></i>
+
+            <div>
+
+                <h3>
+                    Documentos
+                </h3>
+
+                <p>
+                    Consulte a documentação necessária.
+                </p>
+
+            </div>
+
+        </a>
 
 
-            <p>
+        <a
+            href="cronograma.html"
+            class="information-item"
+        >
 
-                Consulte as informações do concurso antes
-                de efectuar a sua candidatura.
+            <i class="fa-solid fa-calendar-days"></i>
 
-            </p>
+            <div>
 
+                <h3>
+                    Cronograma
+                </h3>
 
-        </div>
+                <p>
+                    Consulte as datas e fases do concurso.
+                </p>
 
+            </div>
 
-
-        <div class="information-grid">
-
-
-            <a
-                href="requisitos.html"
-                class="information-item"
-            >
-
-                <i class="fa-solid fa-list-check"></i>
-
-                <div>
-
-                    <h3>
-                        Requisitos
-                    </h3>
-
-                    <p>
-                        Saiba quem pode candidatar-se.
-                    </p>
-
-                </div>
-
-            </a>
+        </a>
 
 
+        <a
+            href="resultados.html"
+            class="information-item"
+        >
 
-            <a
-                href="documentos.html"
-                class="information-item"
-            >
+            <i class="fa-solid fa-square-poll-vertical"></i>
 
-                <i class="fa-solid fa-folder-open"></i>
+            <div>
 
-                <div>
+                <h3>
+                    Resultados
+                </h3>
 
-                    <h3>
-                        Documentos
-                    </h3>
+                <p>
+                    Consulte listas e resultados oficiais.
+                </p>
 
-                    <p>
-                        Consulte a documentação necessária.
-                    </p>
+            </div>
 
-                </div>
-
-            </a>
-
-
-
-            <a
-                href="cronograma.html"
-                class="information-item"
-            >
-
-                <i class="fa-solid fa-calendar-days"></i>
-
-                <div>
-
-                    <h3>
-                        Cronograma
-                    </h3>
-
-                    <p>
-                        Consulte as datas do concurso.
-                    </p>
-
-                </div>
-
-            </a>
-
-
-
-            <a
-                href="resultados.html"
-                class="information-item"
-            >
-
-                <i class="fa-solid fa-square-poll-vertical"></i>
-
-                <div>
-
-                    <h3>
-                        Resultados
-                    </h3>
-
-                    <p>
-                        Consulte listas e resultados oficiais.
-                    </p>
-
-                </div>
-
-            </a>
-
-
-        </div>
+        </a>
 
 
     </div>
 
+</div>
+```
+
 </section>
 
-
 </main>
-
-
 
 <!-- =====================================================
      RODAPÉ
@@ -849,135 +818,130 @@
 
 <footer class="footer">
 
-
-    <div class="container footer-grid">
-
-
-        <div class="footer-brand">
+```
+<div class="container footer-grid">
 
 
-            <img
-                src="assets/img/logo-angola.png"
-                alt="República de Angola"
-                class="footer-logo"
-            >
+    <div class="footer-brand">
 
+        <img
+            src="assets/img/logo-angola.png"
+            alt="República de Angola"
+            class="footer-logo"
+        >
 
-            <h3>
-                Direcção Municipal da Educação de Menongue
-            </h3>
+        <h3>
+            Direcção Municipal da Educação de Menongue
+        </h3>
 
+        <p>
 
-            <p>
+            Portal Oficial do Concurso Público
+            de Ingresso Externo 2026.
 
-                Portal Oficial do Concurso Público
-                de Ingresso Externo 2026.
-
-            </p>
-
-
-        </div>
-
-
-
-        <div class="footer-links">
-
-
-            <h4>
-                Navegação
-            </h4>
-
-
-            <a href="index.html">
-                Início
-            </a>
-
-            <a href="edital.html">
-                Edital
-            </a>
-
-            <a href="requisitos.html">
-                Requisitos
-            </a>
-
-            <a href="cronograma.html">
-                Cronograma
-            </a>
-
-            <a href="consultar.html">
-                Consultar candidatura
-            </a>
-
-
-        </div>
-
-
-
-        <div class="footer-contact">
-
-
-            <h4>
-                Entidade responsável
-            </h4>
-
-
-            <p>
-                <i class="fa-solid fa-building"></i>
-                Administração Municipal de Menongue
-            </p>
-
-
-            <p>
-                <i class="fa-solid fa-graduation-cap"></i>
-                Direcção Municipal da Educação
-            </p>
-
-
-            <p>
-                <i class="fa-solid fa-location-dot"></i>
-                Município de Menongue · Cubango
-            </p>
-
-
-        </div>
-
+        </p>
 
     </div>
 
 
+    <div class="footer-links">
 
-    <div class="footer-bottom">
+        <h4>
+            Navegação
+        </h4>
 
+        <a href="index.html">
+            Início
+        </a>
 
-        <div class="container footer-bottom-inner">
+        <a href="edital.html">
+            Edital
+        </a>
 
+        <a href="requisitos.html">
+            Requisitos
+        </a>
 
-            <span>
-                © 2026 Direcção Municipal da Educação de Menongue.
-            </span>
+        <a href="cronograma.html">
+            Cronograma
+        </a>
 
-
-            <span>
-                Concurso Público de Ingresso Externo
-            </span>
-
-
-        </div>
-
+        <a href="consultar.html">
+            Consultar candidatura
+        </a>
 
     </div>
 
+
+    <div class="footer-contact">
+
+        <h4>
+            Entidade responsável
+        </h4>
+
+        <p>
+            <i class="fa-solid fa-building"></i>
+            Administração Municipal de Menongue
+        </p>
+
+        <p>
+            <i class="fa-solid fa-graduation-cap"></i>
+            Direcção Municipal da Educação
+        </p>
+
+        <p>
+            <i class="fa-solid fa-location-dot"></i>
+            Município de Menongue · Cubango
+        </p>
+
+    </div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+    <div class="container footer-bottom-inner">
+
+        <span>
+            © 2026 Direcção Municipal da Educação de Menongue.
+        </span>
+
+        <span>
+            Portal Oficial do Concurso Público de Ingresso Externo
+        </span>
+
+    </div>
+
+</div>
+```
 
 </footer>
 
+<!-- =====================================================
+     BOTÃO VOLTAR AO TOPO
+===================================================== -->
 
+<button
+id="backToTop"
+class="back-to-top"
+type="button"
+aria-label="Voltar ao topo"
+
+>
+
+```
+<i class="fa-solid fa-arrow-up"></i>
+```
+
+</button>
 
 <!-- =====================================================
      JAVASCRIPT GLOBAL
 ===================================================== -->
 
 <script src="assets/js/main.js"></script>
-
 
 </body>
 
